@@ -1,6 +1,34 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-contract MyContract {
-    constructor() {}
+contract SoberHaven {
+    struct Post {
+        address owner;
+        string title;
+        string description;
+        uint256 upvotes;
+        uint256 downvotes;
+        string location ;
+        string image;
+        uint256 time;
+    }
+    mapping(uint256 => Post) public posts;
+    uint256 public postCount = 0;
+function createPost(address _owner , string memory _title, string memory _description, uint256 _upvotes, uint256 _downvotes, string memory _location , string memory _image, uint256 _time) public returns(uint256){
+    Post storage post = posts[postCount];
+    require( post.time <= block.timestamp, "Time must be lesser  than current time");
+    post.owner = _owner;
+    post.description = _description;
+    post.upvotes = _upvotes;
+    post.downvotes = _downvotes;
+    post.location = _location;
+    post.image = _image;
+    post.time = _time;
+    post.title=_title;
+    
+    postCount++;
+    return postCount -1;
+
+
+}
 }
