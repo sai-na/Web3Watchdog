@@ -17,6 +17,7 @@ contract SoberHaven {
     mapping(uint256 => Post) public posts;
     uint256 public postCount = 0;
     address[] public police = [0x936F3348c3035ea5530F0d959272DC6cC0402C44,0x936F3348c3035ea5530F0d959272DC6cC0402C44];
+    address[] public admin = [0x936F3348c3035ea5530F0d959272DC6cC0402C44,0x936F3348c3035ea5530F0d959272DC6cC0402C44];
 function createPost(address _owner , string memory _title, string memory _description, uint256 _upvotes, string memory _location , string memory _image, uint256 _time ) public returns(uint256){
     Post storage post = posts[postCount];
     require( post.time <= block.timestamp, "Time must be lesser  than current time");
@@ -48,6 +49,26 @@ function updatePublicView( uint256 _id ) public returns (bool) {
     for(uint i=0 ; i<police.length ; i++){
         if(msg.sender == police[i]){
             Post storage post = posts[_id];
+            post.showPublic = true;
+           transfer(post.owner,0.00001 ether);
+            return true;
+        }
+    }
+
+   
+    
+    return false;
+}
+
+function transfer(address to , uint256 amount)public payable{
+     payable(to).transfer(amount);
+}
+
+function updatePoliceView( uint256 _id ) public returns (bool) {
+    //require(msg.sender == police, "Only police can update the view");
+    for(uint i=0 ; i<admin.length ; i++){
+        if(msg.sender == admin[i]){
+            Post storage post = posts[_id];
             post.showPolice = true;
             return true;
         }
@@ -55,5 +76,22 @@ function updatePublicView( uint256 _id ) public returns (bool) {
    
     
     return false;
+}
+function upvotePost( uint256 _id ) public payable returns (bool) {
+    require( msg.value > 0.00001 ether, "Amount must be greater than 0.00001");
+   uint256 amount = msg.value;
+   Post storage post = posts[_id];
+   post.voters.push(msg.sender);
+   post.upvotes+=1;
+  
+   (bool sent ,) = payable(admin[1]).call{value: amount}("");
+   if(sent){
+         return true;
+   }
+   return false;
+
+    
+
+    
 }
 }
