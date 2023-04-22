@@ -42,4 +42,7 @@ function getPosts() public view returns(Post[] memory){
    }
    return allPosts;
 }
+function visibility( uint256 _id , address police) public returns (bool) {
+    
+}
 }
