@@ -68,7 +68,7 @@ function updatePublicView( uint256 _id ) public returns  (bool) {
     
     return false;
 }
-
+// add payable keyword next to public
 function transfer(address payable to , uint256 amount)public{
      to.transfer(amount);
 }
