@@ -10,7 +10,7 @@ information is fake in nature, pending approval from the police that post will b
 action and catch the culprits or peddlers in the area. 
 
 ## Team 
-John Philip George
-Joseph Pauly
-Revand S
-Sai Nath A
+John Philip George<br> 
+Joseph Pauly<br>
+Revand S<br>
+Sai Nath A<br>
