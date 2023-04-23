@@ -7,7 +7,7 @@ import { money } from "../assets";
 import { CustomButton, FormField, Loader } from "../components";
 import { checkIfImage } from "../utils";
 
-const CreateCampaign = () => {
+const CreatePost = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { createCampaign } = useStateContext();
@@ -57,7 +57,7 @@ const CreateCampaign = () => {
         className="w-full mt-[65px] flex flex-col gap-[30px]"
       >
         <div className="flex flex-wrap gap-[40px]">
-        <FormField
+          <FormField
             labelName="Title*"
             placeholder="say no to drugs "
             inputType="text"
@@ -65,15 +65,13 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange("title", e)}
           />
 
-          <FormField
+          {/* <FormField
             labelName="Post owner"
             placeholder="wallet address "
             inputType="text"
             value={form.name}
             handleChange={(e) => handleFormFieldChange("name", e)}
-          />
-
-         
+          /> */}
         </div>
 
         <FormField
@@ -84,31 +82,23 @@ const CreateCampaign = () => {
           handleChange={(e) => handleFormFieldChange("description", e)}
         />
 
-        <div className="w-full flex justify-start items-center p-4 bg-[#15AAFF] h-[120px] rounded-[10px]">
-          <img
-            src={money}
-            alt="money"
-            className="w-[40px] h-[40px] object-contain"
-          />
-          <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">
-            Approved posts will be rewarded!!
-          </h4>
-        </div>
+        <FormField
+          labelName="location*"
+          placeholder="eg : edukki"
+          inputType="text"
+          value={form.description}
+          handleChange={(e) => handleFormFieldChange("location", e)}
+        />
+
 
         <div className="flex flex-wrap gap-[40px]">
+         
           <FormField
-            labelName="Goal *"
-            placeholder="ETH 0.50"
-            inputType="text"
-            value={form.target}
-            handleChange={(e) => handleFormFieldChange("target", e)}
-          />
-          <FormField
-            labelName="End Date *"
-            placeholder="End Date"
+            labelName="Event date *"
+            placeholder="Date"
             inputType="date"
-            value={form.deadline}
-            handleChange={(e) => handleFormFieldChange("deadline", e)}
+            value={form.time}
+            handleChange={(e) => handleFormFieldChange("time", e)}
           />
         </div>
 
@@ -123,7 +113,7 @@ const CreateCampaign = () => {
         <div className="flex justify-center items-center mt-[40px]">
           <CustomButton
             btnType="submit"
-            title="Submit new campaign"
+            title="Submit "
             styles="bg-[#1dc071]"
           />
         </div>
@@ -132,4 +122,4 @@ const CreateCampaign = () => {
   );
 };
 
-export default CreateCampaign;
+export default CreatePost;
