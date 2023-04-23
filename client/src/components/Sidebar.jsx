@@ -27,7 +27,7 @@ const Sidebar = () => {
         speed={1.5}
         loop
         src="https://assets4.lottiefiles.com/private_files/lf30_er9xeac2.json"
-        style={{ height: "50px", width: "50px" }}
+        style={{ height: "60px", width: "60px" }}
       /> <span className='text-sky-500 text-xl font-bold'>SoberHaven</span>
       </Link>
     <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">

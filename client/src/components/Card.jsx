@@ -3,7 +3,7 @@ import { MdDateRange } from 'react-icons/md';
 
 import {format} from "date-fns"
 
-function Card() {
+function Card({ owner, title, description, target, deadline, amountCollected, image, handleClick }) {
 
    const date= new Date();
 
