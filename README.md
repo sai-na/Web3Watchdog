@@ -10,10 +10,10 @@ information is fake in nature, pending approval from the police that post will b
 action and catch the culprits or peddlers in the area. 
 
 ## Team 
-John Philip George<br> 
-Joseph Pauly<br>
-Revand S<br>
-Sai Nath A<br>
+[John Philip George](https://github.com/johnforgit)<br> 
+[Joseph Pauly](https://github.com/JP-GECT)<br>
+[Revand S](https://github.com/revand5467)<br>
+[Sai Nath A](https://github.com/sai-na)<br>
 
 ## Abstract
 Read our abstract which we used for the hackathon submission  
