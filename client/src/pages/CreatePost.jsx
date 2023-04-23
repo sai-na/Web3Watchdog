@@ -7,17 +7,17 @@ import { money } from "../assets";
 import { CustomButton, FormField, Loader } from "../components";
 import { checkIfImage } from "../utils";
 
+
 const CreatePost = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const { createCampaign } = useStateContext();
+  const { publishPost } = useStateContext();
   const [form, setForm] = useState({
-    name: "",
     title: "",
     description: "",
-    target: "",
-    deadline: "",
+    location:"",
     image: "",
+    time: "",
   });
 
   const handleFormFieldChange = (fieldName, e) => {
@@ -26,21 +26,15 @@ const CreatePost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //console.log( form)
 
-    checkIfImage(form.image, async (exists) => {
-      if (exists) {
-        setIsLoading(true);
-        await createCampaign({
+    setIsLoading(true);
+        await publishPost({
           ...form,
-          target: ethers.utils.parseUnits(form.target, 18),
+         
         });
         setIsLoading(false);
         navigate("/");
-      } else {
-        alert("Provide valid image URL");
-        setForm({ ...form, image: "" });
-      }
-    });
   };
 
   return (
@@ -86,13 +80,13 @@ const CreatePost = () => {
           labelName="location*"
           placeholder="eg : edukki"
           inputType="text"
-          value={form.description}
+          value={form.location}
           handleChange={(e) => handleFormFieldChange("location", e)}
         />
 
 
         <div className="flex flex-wrap gap-[40px]">
-
+         
           <FormField
             labelName="Event date *"
             placeholder="Date"
@@ -103,8 +97,8 @@ const CreatePost = () => {
         </div>
 
         <FormField
-          labelName="Campaign image *"
-          placeholder="Place image URL of your campaign"
+          labelName="Evidence image *"
+          placeholder="Place image URL "
           inputType="url"
           value={form.image}
           handleChange={(e) => handleFormFieldChange("image", e)}
@@ -114,7 +108,7 @@ const CreatePost = () => {
           <CustomButton
             btnType="submit"
             title="Submit "
-            styles="bg-sky-500"
+            styles="bg-[#1dc071]"
           />
         </div>
       </form>
