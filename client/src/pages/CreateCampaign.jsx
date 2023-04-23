@@ -93,7 +93,7 @@ const CreateCampaign = () => {
             value={form.deadline}
             handleChange={(e) => handleFormFieldChange('deadline', e)}
           />
-        </div>
+        </div>++
 
         <FormField 
             labelName="Campaign image *"
