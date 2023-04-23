@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { DisplayCampaigns } from '../components';
 import { useStateContext } from '../context'
+import Card from '../components/Card';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +22,7 @@ const Home = () => {
   }, [address, contract]);
 
   return (
+   
     <DisplayCampaigns 
       title="All Campaigns"
       isLoading={isLoading}

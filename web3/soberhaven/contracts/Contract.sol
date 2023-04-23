@@ -74,10 +74,16 @@ function updatePublicView( uint256 _id ) public returns  (bool) {
     
     return false;
 }
+<<<<<<< HEAD
 
 function transfer(address payable to , uint256 amount)public payable{
       (bool sent, ) = to.call{value: amount}("");
         require(sent, "Failed to send Ether");
+=======
+// add payable keyword next to public
+function transfer(address payable to , uint256 amount)public{
+     to.transfer(amount);
+>>>>>>> 8597991df5953d98d3e4fa57d7ba3298635a6ffa
 }
 
 function updatePoliceView( uint256 _id ) public returns (bool) {
