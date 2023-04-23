@@ -92,7 +92,7 @@ const CreatePost = () => {
 
 
         <div className="flex flex-wrap gap-[40px]">
-         
+
           <FormField
             labelName="Event date *"
             placeholder="Date"
@@ -114,7 +114,7 @@ const CreatePost = () => {
           <CustomButton
             btnType="submit"
             title="Submit "
-            styles="bg-[#1dc071]"
+            styles="bg-sky-500"
           />
         </div>
       </form>
