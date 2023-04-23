@@ -1,5 +1,5 @@
 # HackAthena
-Project repo for HackAthena'23
+Project repo for HackAthena'23  
 This project was done as part of HackAthena hackathon held at JEC Cheruthuruthy. 
 
 ## Project description
