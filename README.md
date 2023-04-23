@@ -16,6 +16,5 @@ action and catch the culprits or peddlers in the area.
 [Sai Nath A](https://github.com/sai-na)<br>
 
 ## Abstract
-Read our abstract which we used for the hackathon submission  
-[Final Abstract](chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/pdfviewer/web/viewer.html?file=file:///C:/Users/ASUS/Downloads/HackAthena.pdf)  
-[Initial Abstract](https://docs.google.com/document/d/1vsiWn7XdiudV2xPtEGjYgzjP5O1IbNpEbQ1hcw7PsYo/edit#heading=h.ok2o59qgm44d)
+Read our abstract which we used for the hackathon submission    
+[Abstract](https://docs.google.com/document/d/1vsiWn7XdiudV2xPtEGjYgzjP5O1IbNpEbQ1hcw7PsYo/edit#heading=h.ok2o59qgm44d)
