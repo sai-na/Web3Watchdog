@@ -7,7 +7,7 @@ import Card from './Card';
 
 
 
-const DisplayCampaigns = ({ title, isLoading, posts }) => {
+const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
   const [sortedPosts, setSortedPosts] = useState([]);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
   let postt = posts.filter((item, index) => {
     // Keep all items except for the one with title 'sge4g w4twt'
-    return item.title !== 'Et sed id ullam cul';
+    return item.title !== 'Et sed id ullam cul' && item.showPublic !== false;
   });
 
   useEffect(() => {
@@ -28,14 +28,16 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
 
 
-    let postsWithTimestamps = postt?.map(post => {
+    let postsWithTimestamps = postt?.map((post) => {
       const postTime = (new Date((parseInt(post?.postTime.toString())) * 1000));;
       const eventTime = (new Date((parseInt(post?.eventTime.toString())) * 1000));;
-      const image = `https://${post?.image}.ipfs.w3s.link/hs.jpg`;
+      const image = post?.image;
 
-      return { ...post, postTime, eventTime, image: image };
+      return { ...post, postTime, eventTime, image: image, };
     });
     postsWithTimestamps = postsWithTimestamps.sort((a, b) => b.postTime - a.postTime);
+    console.log(postsWithTimestamps);
+
     setSortedPosts(postsWithTimestamps);
   }, [posts]);
 
@@ -49,6 +51,7 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
   console.log(sortedPosts);
 
   return (
+
     <div>
       <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">{title} ({postt?.length})</h1>
 

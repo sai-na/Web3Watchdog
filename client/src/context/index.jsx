@@ -8,35 +8,49 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract("0xc0254013616e40027a8D65442DfdC14C510759bb");
- const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
+  const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
 
   const address = useAddress();
   const connect = useMetamask();
 
-  
+
+
+  const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost");
+
+  // const upVoteCall = async (_id) => {
+
+  //   try {
+  //     const data = await upvotePost();
+  //     console.info("contract call successs", data);
+  //   } catch (err) {
+  //     console.error("contract call failure", err);
+  //   }
+  // };
+
+
 
   const publishPost = async (form) => {
-    console.log(form)
-  
-      try{
-          
-          const data = await createPost([
-            address, // owner
-            form.title, // title
-            form.description, // description
-            form.location,
-            form.image,
-            new Date(form.time).getTime(), // time(event time),
-           
-          ] );
-          console.log('contract call success', data)
-      }catch(err){
-          console.log('contract call error', err)
-      }
-     
-  
-    
-  }
+    console.log(form);
+
+    try {
+
+      const data = await createPost([
+        address, // owner
+        form.title, // title
+        form.description, // description
+        form.location,
+        form.image,
+        new Date(form.time).getTime(), // time(event time),
+
+      ]);
+      console.log('contract call success', data);
+    } catch (err) {
+      console.log('contract call error', err);
+    }
+
+
+
+  };
 
   const publishCampaign = async (form) => {
     try {
@@ -47,19 +61,19 @@ export const StateContextProvider = ({ children }) => {
         form.target,
         new Date(form.deadline).getTime(), // deadline,
         form.image
-      ])
+      ]);
 
-      console.log("contract call success", data)
+      console.log("contract call success", data);
     } catch (error) {
-      console.log("contract call failure", error)
+      console.log("contract call failure", error);
     }
-  }
+  };
 
 
-  
 
 
-  
+
+
 
   const getCampaigns = async () => {
     const campaigns = await contract.call('getCampaigns');
@@ -76,7 +90,7 @@ export const StateContextProvider = ({ children }) => {
     }));
 
     return parsedCampaings;
-  }
+  };
 
   const getAdminPost = async () => {
     const adminPost = await contract.call('getPosts');
@@ -85,19 +99,19 @@ export const StateContextProvider = ({ children }) => {
       owner: item.owner,
       description: item.description,
       title: item.title,
-      upvotes:item.upvotes,
-      location:item.location,
-      image:item.image,
-      eventTime:item.eventTime,
-      postTime:item.postTime,
-      showPolice:item.showPolice,
-      showPublic:item.showPublic,
+      upvotes: item.upvotes,
+      location: item.location,
+      image: item.image,
+      eventTime: item.eventTime,
+      postTime: item.postTime,
+      showPolice: item.showPolice,
+      showPublic: item.showPublic,
       pId: i
     }));
-    console.log(parsedAdminPosts)
+    console.log(parsedAdminPosts);
 
     return parsedAdminPosts;
-  }
+  };
 
   const getUserCampaigns = async () => {
     const allCampaigns = await getCampaigns();
@@ -105,13 +119,13 @@ export const StateContextProvider = ({ children }) => {
     const filteredCampaigns = allCampaigns.filter((campaign) => campaign.owner === address);
 
     return filteredCampaigns;
-  }
+  };
 
   const donate = async (pId, amount) => {
-    const data = await contract.call('donateToCampaign', pId, { value: ethers.utils.parseEther(amount)});
+    const data = await contract.call('donateToCampaign', pId, { value: ethers.utils.parseEther(amount) });
 
     return data;
-  }
+  };
 
   const getDonations = async (pId) => {
     const donations = await contract.call('getDonators', pId);
@@ -119,25 +133,26 @@ export const StateContextProvider = ({ children }) => {
 
     const parsedDonations = [];
 
-    for(let i = 0; i < numberOfDonations; i++) {
+    for (let i = 0;i < numberOfDonations;i++) {
       parsedDonations.push({
         donator: donations[0][i],
         donation: ethers.utils.formatEther(donations[1][i].toString())
-      })
+      });
     }
 
     return parsedDonations;
-  }
+  };
 
 
   return (
     <StateContext.Provider
-      value={{ 
+      value={{
         address,
         contract,
         connect,
         createCampaign: publishCampaign,
         publishPost,
+
         getCampaigns,
         getAdminPost,
         getUserCampaigns,
@@ -147,7 +162,7 @@ export const StateContextProvider = ({ children }) => {
     >
       {children}
     </StateContext.Provider>
-  )
-}
+  );
+};
 
 export const useStateContext = () => useContext(StateContext);

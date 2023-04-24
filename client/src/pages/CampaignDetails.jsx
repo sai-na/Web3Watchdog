@@ -11,7 +11,7 @@ import { BiUpvote } from "react-icons/bi";
 const CampaignDetails = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
-  const { donate, contract, address } = useStateContext();
+  const { donate, address } = useStateContext();
 
   const [isLoading, setIsLoading] = useState(false);
   const [amount, setAmount] = useState('');
@@ -28,19 +28,19 @@ const CampaignDetails = () => {
 
 
 
-  // const fetchDonators = async () => {
-  //   const data = await getDonations(state.pId);
+  const handleupVoteCall = async () => {
+    //await upVoteCall(state.pId);
 
-  //   setDonators(data);
-  // };
+
+  };
 
 
   const handleDonate = async () => {
     setIsLoading(true);
 
-    await donate(state.pId, amount);
+    //await upVoteCall(state.pId,);
 
-    navigate('/');
+    //navigate('/');
     setIsLoading(false);
   };
 
@@ -69,6 +69,7 @@ const CampaignDetails = () => {
       <div className="mt-[60px] flex lg:flex-row flex-col gap-5">
         <div className="flex-[2] flex flex-col gap-[40px]">
           <div>
+            <h4 className="font-epilogue font-semibold text-[45px] text-white uppercase">{state?.title}</h4>
             <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Creator</h4>
 
             <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
@@ -96,7 +97,7 @@ const CampaignDetails = () => {
           <div className='flex items-center gap-3 font-epilogue font-semibold text-[18px] text-white uppercase '>
             <p >Support the Creator by</p>
             <p> <span className='text-sky-500'>upvoting </span>   </p>
-            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            <button onClick={handleupVoteCall()} class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 <BiUpvote />
               </span>
@@ -113,7 +114,7 @@ const CampaignDetails = () => {
 
           <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px]">
             <p className="font-epilogue fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
-              Fund the campaign
+              Donate for this platform
             </p>
             <div className="mt-[30px]">
               <input

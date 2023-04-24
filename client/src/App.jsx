@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Sidebar, Navbar } from './components';
 import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
+import Admin from './pages/Admin';
+import DisplayAdmin from './pages/DisplayAdmin';
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/post-details/:id" element={<CampaignDetails />} />
+          <Route path="/admin-post-details/:id" element={<CampaignDetails />} />
+          <Route path="/admin-post-details/:id" element={<Admin />} />
         </Routes>
       </div>
     </div>
