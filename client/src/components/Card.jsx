@@ -13,7 +13,7 @@ function Card({ owner, title, location, eventTime, amountCollected, image, handl
 
     return (
 
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" onClick={handleClick}>
             <a href="#">
                 <img className="rounded-t-lg w-full  object-cover h-64 " src="https://images.pexels.com/photos/7230226/pexels-photo-7230226.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
             </a>

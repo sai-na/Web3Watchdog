@@ -15,7 +15,7 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
 
 
-  posts = posts.filter((item, index) => {
+  let postt = posts.filter((item, index) => {
     // Keep all items except for the one with title 'sge4g w4twt'
     return item.title !== 'Et sed id ullam cul';
   });
@@ -26,7 +26,9 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
 
 
-    let postsWithTimestamps = posts?.map(post => {
+
+
+    let postsWithTimestamps = postt?.map(post => {
       const postTime = (new Date((parseInt(post?.postTime.toString())) * 1000));;
       const eventTime = (new Date((parseInt(post?.eventTime.toString())) * 1000));;
 
@@ -46,7 +48,7 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
   return (
     <div>
-      <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">{title} ({posts?.length})</h1>
+      <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">{title} ({postt?.length})</h1>
 
       <div className="flex flex-wrap mt-[20px] gap-[26px]">
         {isLoading && (
