@@ -5,6 +5,7 @@ import { Sidebar, Navbar } from './components';
 import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
 import Admin from './pages/Admin';
 import DisplayAdmin from './pages/DisplayAdmin';
+import DetailesAdmin from './pages/DetailesAdmin';
 
 const App = () => {
   return (
@@ -21,8 +22,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/post-details/:id" element={<CampaignDetails />} />
-          <Route path="/admin-post-details/:id" element={<CampaignDetails />} />
-          <Route path="/admin-post-details/:id" element={<Admin />} />
+          <Route path="/admin-post-details/:id" element={<DetailesAdmin />} />
+          <Route path="/admin-post" element={<Admin />} />
         </Routes>
       </div>
     </div>
