@@ -12,6 +12,7 @@ import menu from './menu.svg';
 import money from './money.svg';
 import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
+import profile1 from './profile-1.jpg';
 
 export {
   tagType,
@@ -21,6 +22,7 @@ export {
   logout,
   payment,
   profile,
+  profile1,
   sun,
   withdraw,
   search,

@@ -5,7 +5,8 @@ import { format } from "date-fns";
 import { useStateContext } from '../context';
 import { CountBox, CustomButton, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
-import { thirdweb } from '../assets';
+import { profile1 } from '../assets';
+import { BiUpvote } from "react-icons/bi";
 
 const CampaignDetails = () => {
   const { state } = useLocation();
@@ -18,7 +19,7 @@ const CampaignDetails = () => {
 
 
 
-  const date = state?.eventTime ? state?.eventTime : "";
+  const date = new Date();
 
   const formattedDate = format(date, "d MMM yyyy");
 
@@ -33,10 +34,6 @@ const CampaignDetails = () => {
   //   setDonators(data);
   // };
 
-  useEffect(() => {
-    //if (contract) fetchDonators();
-    console.log(state);
-  }, [contract, address]);
 
   const handleDonate = async () => {
     setIsLoading(true);
@@ -47,6 +44,9 @@ const CampaignDetails = () => {
     setIsLoading(false);
   };
 
+  console.log(" ddd");
+  console.log(state);
+
   return (
     <div>
       {isLoading && <Loader />}
@@ -55,11 +55,8 @@ const CampaignDetails = () => {
 
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
-          <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl" />
-          <div className="relative w-full h-[5px] bg-[#3a3a43] mt-2">
-            <div className="absolute h-full bg-[#4acd8d]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected)}%`, maxWidth: '100%' }}>
-            </div>
-          </div>
+          <img src={state?.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl" />
+
         </div>
 
         {/* <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
@@ -76,37 +73,39 @@ const CampaignDetails = () => {
 
             <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
               <div className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
-                <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain" />
+                <img src={profile1} alt="user" className=" rounded-full object-fill" />
               </div>
               <div>
-                <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state.owner}</h4>
-                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Campaigns</p>
+                <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state?.owner}</h4>
+                {/* <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Campaigns</p> */}
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Story</h4>
-
+            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Description</h4>
+            <p className="font-epilogue mt-4 font-normal text-[16px] text-[#808191] leading-[26px] text-justify ">
+              <span className='font-bold'>Event time</span><br />{formattedDate}</p>
             <div className="mt-[20px]">
-              <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">{state.description}</p>
+
+              <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">{state?.description}</p>
             </div>
           </div>
 
-          <div>
-            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Donators</h4>
 
-            <div className="mt-[20px] flex flex-col gap-4">
-              {donators.length > 0 ? donators.map((item, index) => (
-                <div key={`${item.donator}-${index}`} className="flex justify-between items-center gap-4">
-                  <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator}</p>
-                  <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation}</p>
-                </div>
-              )) : (
-                <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">No donators yet. Be the first one!</p>
-              )}
-            </div>
+          <div className='flex items-center gap-3 font-epilogue font-semibold text-[18px] text-white uppercase '>
+            <p >Support the Creator by</p>
+            <p> <span className='text-sky-500'>upvoting </span>   </p>
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                <BiUpvote />
+              </span>
+            </button>
+
+
+
           </div>
+
         </div>
 
         <div className="flex-1">
@@ -141,8 +140,8 @@ const CampaignDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
-export default CampaignDetails;
+export default CampaignDetails;;

@@ -31,9 +31,9 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
     let postsWithTimestamps = postt?.map(post => {
       const postTime = (new Date((parseInt(post?.postTime.toString())) * 1000));;
       const eventTime = (new Date((parseInt(post?.eventTime.toString())) * 1000));;
+      const image = `https://${post?.image}.ipfs.w3s.link/hs.jpg`;
 
-
-      return { ...post, postTime, eventTime };
+      return { ...post, postTime, eventTime, image: image };
     });
     postsWithTimestamps = postsWithTimestamps.sort((a, b) => b.postTime - a.postTime);
     setSortedPosts(postsWithTimestamps);
@@ -41,6 +41,8 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
 
 
   const handleNavigate = (post) => {
+    console.log("post");
+    console.log(post.eventTime);
     navigate(`/post-details/${post.title}`, { state: post });
   };
 
@@ -64,7 +66,9 @@ const DisplayCampaigns = ({ title, isLoading, posts }) => {
         {!isLoading && sortedPosts?.length > 0 && sortedPosts?.map((post, index) => <Card
           key={index}
           {...post}
-          handleClick={() => handleNavigate(post)}
+
+          handleClick={() => handleNavigate(post)
+          }
         />)}
       </div>
     </div>
