@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@thirdweb-dev/react": "^3.11.8",
+    "@thirdweb-dev/sdk": "^3.10.11",
+    "ethers": "^5.7.2"
+  }
+}

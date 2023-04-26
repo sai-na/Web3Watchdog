@@ -1,0 +1,1 @@
+{"version":3,"file":"ens.d.ts","sourceRoot":"../../../../../src/evm/common","sources":["ens.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,YAAY,EAAsB,MAAM,WAAW,CAAC;AAatE,wBAAsB,UAAU,CAC9B,GAAG,EAAE,MAAM,EACX,KAAK,SAAI,GACR,OAAO,CAAC,MAAM,GAAG,IAAI,CAAC,CAqCxB;AAED,wBAAsB,cAAc,CAClC,YAAY,EAAE,YAAY,GACzB,OAAO,CAAC,OAAO,CAAC,CAElB"}

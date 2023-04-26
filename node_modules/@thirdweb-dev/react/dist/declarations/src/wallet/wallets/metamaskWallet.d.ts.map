@@ -1,0 +1,1 @@
+{"version":3,"file":"metamaskWallet.d.ts","sourceRoot":"../../../../../src/wallet/wallets","sources":["metamaskWallet.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAU,MAAM,0BAA0B,CAAC;AACtE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;AAEvD,eAAO,MAAM,cAAc;;;;;;sBAIL,aAAa;CAGlC,CAAC"}

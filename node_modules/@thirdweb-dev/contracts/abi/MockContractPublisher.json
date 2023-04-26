@@ -1,0 +1,386 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockContractPublisher",
+  "sourceName": "contracts/mock/MockContractPublisher.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "publisher",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "contractId",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "publishTimestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "publishMetadataUri",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "bytecodeHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct IContractPublisher.CustomContractInstance",
+          "name": "publishedContract",
+          "type": "tuple"
+        }
+      ],
+      "name": "ContractPublished",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "publisher",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "contractId",
+          "type": "string"
+        }
+      ],
+      "name": "ContractUnpublished",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isPaused",
+          "type": "bool"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "publisher",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "prevURI",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newURI",
+          "type": "string"
+        }
+      ],
+      "name": "PublisherProfileUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "getAllPublishedContracts",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "contractId",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "publishTimestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "publishMetadataUri",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "bytecodeHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct IContractPublisher.CustomContractInstance[]",
+          "name": "published",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "getPublishedContract",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "contractId",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "publishTimestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "publishMetadataUri",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "bytecodeHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct IContractPublisher.CustomContractInstance",
+          "name": "published",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "getPublishedContractVersions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "contractId",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "publishTimestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "publishMetadataUri",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "bytecodeHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct IContractPublisher.CustomContractInstance[]",
+          "name": "published",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "getPublishedUriFromCompilerUri",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "publishedMetadataUris",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "getPublisherProfileUri",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "publisher",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "contractId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "publishMetadataUri",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "compilerMetadataUri",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "bytecodeHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "publishContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "setPublisherProfileUri",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "publisher",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "contractId",
+          "type": "string"
+        }
+      ],
+      "name": "unpublishContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610726806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c806380251dac1161005b57806380251dac146100f8578063819e992f14610118578063af8db69014610138578063d50299e61461014b57600080fd5b806306eb56cc1461008d5780634f781675146100a15780636e578e541461008d5780637ec047fa146100d8575b600080fd5b61009f61009b3660046103ef565b5050565b005b6100c26100af36600461043d565b5060408051602081019091526000815290565b6040516100cf91906104ac565b60405180910390f35b6100eb6100e63660046103ef565b610161565b6040516100cf9190610521565b61010b6101063660046103ef565b6101ad565b6040516100cf9190610534565b61012b610126366004610596565b6101e8565b6040516100cf91906105d3565b61010b61014636600461043d565b61021c565b61009f610159366004610628565b505050505050565b6101696102f5565b506040805160c081018252600060a0820181815282526020808301829052835190810184528181529282019290925260608101829052608081019190915292915050565b604080516000808252602082019092526060916101e0565b6101cd6102f5565b8152602001906001900390816101c55790505b509392505050565b60408051600080825260208201909252606091610215565b60608152602001906001900390816102005790505b5092915050565b60408051600180825281830190925260609160009190816020015b61023f6102f5565b8152602001906001900390816102375790505090506040518060a001604052806040518060400160405280600c81526020016b135bd8dad0dbdb9d1c9858dd60a21b8152508152602001607b81526020016040518060400160405280600b81526020016a697066733a2f2f6d6f636b60a81b8152508152602001600160001b815260200160006001600160a01b0316815250816000815181106102e4576102e46106da565b602090810291909101015292915050565b6040518060a001604052806060815260200160008152602001606081526020016000801916815260200160006001600160a01b031681525090565b80356001600160a01b038116811461034757600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261037357600080fd5b813567ffffffffffffffff8082111561038e5761038e61034c565b604051601f8301601f19908116603f011681019082821181831017156103b6576103b661034c565b816040528381528660208588010111156103cf57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561040257600080fd5b61040b83610330565b9150602083013567ffffffffffffffff81111561042757600080fd5b61043385828601610362565b9150509250929050565b60006020828403121561044f57600080fd5b61045882610330565b9392505050565b6000815180845260005b8181101561048557602081850181015186830182015201610469565b81811115610497576000602083870101525b50601f01601f19169290920160200192915050565b602081526000610458602083018461045f565b6000815160a084526104d460a085018261045f565b905060208301516020850152604083015184820360408601526104f7828261045f565b915050606083015160608501526001600160a01b0360808401511660808501528091505092915050565b60208152600061045860208301846104bf565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b8281101561058957603f198886030184526105778583516104bf565b9450928501929085019060010161055b565b5092979650505050505050565b6000602082840312156105a857600080fd5b813567ffffffffffffffff8111156105bf57600080fd5b6105cb84828501610362565b949350505050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b8281101561058957603f1988860301845261061685835161045f565b945092850192908501906001016105fa565b60008060008060008060c0878903121561064157600080fd5b61064a87610330565b9550602087013567ffffffffffffffff8082111561066757600080fd5b6106738a838b01610362565b9650604089013591508082111561068957600080fd5b6106958a838b01610362565b955060608901359150808211156106ab57600080fd5b506106b889828a01610362565b935050608087013591506106ce60a08801610330565b90509295509295509295565b634e487b7160e01b600052603260045260246000fdfea264697066735822122017ac2d574216df70b170af0d03b783cc21f4382c7e73d8dcdf67de496739e09d64736f6c634300080c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c806380251dac1161005b57806380251dac146100f8578063819e992f14610118578063af8db69014610138578063d50299e61461014b57600080fd5b806306eb56cc1461008d5780634f781675146100a15780636e578e541461008d5780637ec047fa146100d8575b600080fd5b61009f61009b3660046103ef565b5050565b005b6100c26100af36600461043d565b5060408051602081019091526000815290565b6040516100cf91906104ac565b60405180910390f35b6100eb6100e63660046103ef565b610161565b6040516100cf9190610521565b61010b6101063660046103ef565b6101ad565b6040516100cf9190610534565b61012b610126366004610596565b6101e8565b6040516100cf91906105d3565b61010b61014636600461043d565b61021c565b61009f610159366004610628565b505050505050565b6101696102f5565b506040805160c081018252600060a0820181815282526020808301829052835190810184528181529282019290925260608101829052608081019190915292915050565b604080516000808252602082019092526060916101e0565b6101cd6102f5565b8152602001906001900390816101c55790505b509392505050565b60408051600080825260208201909252606091610215565b60608152602001906001900390816102005790505b5092915050565b60408051600180825281830190925260609160009190816020015b61023f6102f5565b8152602001906001900390816102375790505090506040518060a001604052806040518060400160405280600c81526020016b135bd8dad0dbdb9d1c9858dd60a21b8152508152602001607b81526020016040518060400160405280600b81526020016a697066733a2f2f6d6f636b60a81b8152508152602001600160001b815260200160006001600160a01b0316815250816000815181106102e4576102e46106da565b602090810291909101015292915050565b6040518060a001604052806060815260200160008152602001606081526020016000801916815260200160006001600160a01b031681525090565b80356001600160a01b038116811461034757600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261037357600080fd5b813567ffffffffffffffff8082111561038e5761038e61034c565b604051601f8301601f19908116603f011681019082821181831017156103b6576103b661034c565b816040528381528660208588010111156103cf57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806040838503121561040257600080fd5b61040b83610330565b9150602083013567ffffffffffffffff81111561042757600080fd5b61043385828601610362565b9150509250929050565b60006020828403121561044f57600080fd5b61045882610330565b9392505050565b6000815180845260005b8181101561048557602081850181015186830182015201610469565b81811115610497576000602083870101525b50601f01601f19169290920160200192915050565b602081526000610458602083018461045f565b6000815160a084526104d460a085018261045f565b905060208301516020850152604083015184820360408601526104f7828261045f565b915050606083015160608501526001600160a01b0360808401511660808501528091505092915050565b60208152600061045860208301846104bf565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b8281101561058957603f198886030184526105778583516104bf565b9450928501929085019060010161055b565b5092979650505050505050565b6000602082840312156105a857600080fd5b813567ffffffffffffffff8111156105bf57600080fd5b6105cb84828501610362565b949350505050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b8281101561058957603f1988860301845261061685835161045f565b945092850192908501906001016105fa565b60008060008060008060c0878903121561064157600080fd5b61064a87610330565b9550602087013567ffffffffffffffff8082111561066757600080fd5b6106738a838b01610362565b9650604089013591508082111561068957600080fd5b6106958a838b01610362565b955060608901359150808211156106ab57600080fd5b506106b889828a01610362565b935050608087013591506106ce60a08801610330565b90509295509295509295565b634e487b7160e01b600052603260045260246000fdfea264697066735822122017ac2d574216df70b170af0d03b783cc21f4382c7e73d8dcdf67de496739e09d64736f6c634300080c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

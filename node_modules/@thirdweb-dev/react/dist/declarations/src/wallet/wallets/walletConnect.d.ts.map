@@ -1,0 +1,1 @@
+{"version":3,"file":"walletConnect.d.ts","sourceRoot":"../../../../../src/wallet/wallets","sources":["walletConnect.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,uBAAuB,CAAC;AACtD,OAAO,KAAK,EAAU,aAAa,EAAE,MAAM,0BAA0B,CAAC;AAGtE,eAAO,MAAM,aAAa,YAAa;IAAE,SAAS,CAAC,EAAE,MAAM,CAAA;CAAE;;;;;;sBAKvC,aAAa;CAGlC,CAAC"}

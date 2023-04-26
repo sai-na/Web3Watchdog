@@ -1,0 +1,1 @@
+{"version":3,"file":"storage-downloader.d.ts","sourceRoot":"../../../../../src/core/downloaders","sources":["storage-downloader.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,WAAW,EAAE,kBAAkB,EAAE,MAAM,aAAa,CAAC;AAG9D;;;;;;;;;;;GAWG;AACH,qBAAa,iBAAkB,YAAW,kBAAkB;IACpD,QAAQ,CACZ,GAAG,EAAE,MAAM,EACX,WAAW,EAAE,WAAW,EACxB,QAAQ,SAAI,GACX,OAAO,CAAC,QAAQ,CAAC;CA4BrB"}

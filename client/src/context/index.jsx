@@ -12,7 +12,7 @@ export const StateContextProvider = ({ children }) => {
   const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
 
   const upVote = async (id) => {
-    debugger
+    //debugger
     try {
       const data = await upvotePost([id]);
       console.info("contract call successs", data);
