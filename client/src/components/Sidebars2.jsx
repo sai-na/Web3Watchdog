@@ -152,7 +152,7 @@ const Sidebar2 = ({ mainContent }) => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/police"} className="link">
+                                <NavLink to={"/police-post"} className="link">
                                     <GiPoliceBadge size={23} className="min-w-max" />
                                     police
                                 </NavLink>
