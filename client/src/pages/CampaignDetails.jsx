@@ -43,7 +43,7 @@ const CampaignDetails = () => {
     setIsLoading(true);
 
     //await upVoteCall(state.pId,);
-
+    await donate(address, amount);
     //navigate('/');
     setIsLoading(false);
   };
