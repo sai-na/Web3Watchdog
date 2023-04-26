@@ -13,7 +13,7 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
       <img src={imgUrl} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
     )}
   </div>
-)
+);
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -23,39 +23,39 @@ const Sidebar = () => {
     <div className="">
       <Link className='flex  justify-center items-center' to="/">
         <Player
-        autoplay 
-        speed={1.5}
-        loop
-        src="https://assets4.lottiefiles.com/private_files/lf30_er9xeac2.json"
-        style={{ height: "60px", width: "60px" }}
-      /> <span className='text-sky-500 text-xl font-bold'>SoberHaven</span>
+          autoplay
+          speed={1.5}
+          loop
+          src="https://assets4.lottiefiles.com/private_files/lf30_er9xeac2.json"
+          style={{ height: "60px", width: "60px" }}
+        /> <span className='text-sky-500 text-xl font-bold'>SoberHaven</span>
       </Link>
-    <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
-      
+      <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
 
 
 
-      <div className="flex-1 -ml-16 flex flex-col justify-between items-center bg-[#1c1c24] rounded-[20px] w-[76px] py-4 mt-12">
-        <div className="flex flex-col justify-center items-center gap-3">
-          {navlinks.map((link) => (
-            <Icon 
-              key={link.name}
-              {...link}
-              isActive={isActive}
-              handleClick={() => {
-                if(!link.disabled) {
-                  setIsActive(link.name);
-                  navigate(link.link);
-                }
-              }}
-            />
-          ))}
+
+        <div className="flex-1 -ml-16 flex flex-col justify-between items-center bg-white rounded-[20px] w-[76px] py-4 mt-12">
+          <div className="flex flex-col justify-center items-center gap-3">
+            {navlinks.map((link) => (
+              <Icon
+                key={link.name}
+                {...link}
+                isActive={isActive}
+                handleClick={() => {
+                  if (!link.disabled) {
+                    setIsActive(link.name);
+                    navigate(link.link);
+                  }
+                }}
+              />
+            ))}
+          </div>
+
+          {/* <Icon styles="bg-[#1c1c24] shadow-secondary" imgUrl={sun} /> */}
         </div>
+      </div></div>
+  );
+};
 
-        {/* <Icon styles="bg-[#1c1c24] shadow-secondary" imgUrl={sun} /> */}
-      </div>
-    </div></div>
-  )
-}
-
-export default Sidebar
+export default Sidebar;

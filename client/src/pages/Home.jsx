@@ -24,6 +24,7 @@ const Home = () => {
   return (
 
     <DisplayCampaigns
+
       title="All Campaigns"
       isLoading={isLoading}
       posts={posts}

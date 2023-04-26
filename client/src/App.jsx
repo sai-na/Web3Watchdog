@@ -6,12 +6,13 @@ import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
 import Admin from './pages/Admin';
 import DisplayAdmin from './pages/DisplayAdmin';
 import DetailesAdmin from './pages/DetailesAdmin';
+import Sidebar2 from './components/Sidebars2';
 
 const App = () => {
   return (
     <div className="relative sm:-8 p-4 bg-[#13131a] min-h-screen flex flex-row">
       <div className="sm:flex hidden mr-10 relative">
-        <Sidebar />
+        <Sidebar2 />
       </div>
 
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">

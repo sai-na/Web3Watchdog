@@ -17,7 +17,7 @@ const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
 
   let postt = posts.filter((item, index) => {
     // Keep all items except for the one with title 'sge4g w4twt'
-    return item.title !== 'Et sed id ullam cul' && item.showPublic !== false;
+    return item.showPublic !== false;
   });
 
   useEffect(() => {
@@ -52,8 +52,8 @@ const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
 
   return (
 
-    <div>
-      <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">{title} ({postt?.length})</h1>
+    <div className='bg-white'>
+      <h1 className="font-epilogue font-semibold text-[18px] text-black text-left">{title} ({postt?.length})</h1>
 
       <div className="flex flex-wrap mt-[20px] gap-[26px]">
         {isLoading && (
