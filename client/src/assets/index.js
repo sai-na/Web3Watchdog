@@ -13,6 +13,7 @@ import money from './money.svg';
 import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import profile1 from './profile-1.jpg';
+import drug1 from './drug.jpeg'
 
 export {
   tagType,
@@ -30,4 +31,5 @@ export {
   money,
   loader,
   thirdweb,
+  drug1
 };

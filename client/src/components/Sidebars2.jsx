@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 // * React icons
 import { IoIosArrowBack } from "react-icons/io";
 import { GrAdd, GrAnnounce } from "react-icons/gr";
+import {GiPoliceBadge} from "react-icons/gi"
+import {RiAdminFill} from "react-icons/ri"
 
 
 import { AiOutlineAppstore, AiFillSetting } from "react-icons/ai";
@@ -150,9 +152,9 @@ const Sidebar2 = ({ mainContent }) => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/storage"} className="link">
-                                    <HiOutlineDatabase size={23} className="min-w-max" />
-                                    Storage
+                                <NavLink to={"/police"} className="link">
+                                    <GiPoliceBadge size={23} className="min-w-max" />
+                                    police
                                 </NavLink>
                             </li>
                             <li>
@@ -175,9 +177,9 @@ const Sidebar2 = ({ mainContent }) => {
                                 </div>
                             )} */}
                             <li>
-                                <NavLink to={"/settings"} className="link">
-                                    <AiFillSetting size={23} className="min-w-max" />
-                                    Settings
+                                <NavLink to={"/admin-post"} className="link">
+                                    <RiAdminFill size={23} className="min-w-max" />
+                                    Admin
                                 </NavLink>
                             </li>
                         </ul>

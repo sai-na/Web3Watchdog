@@ -7,7 +7,7 @@ import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract("0xc0254013616e40027a8D65442DfdC14C510759bb");
+  const { contract } = useContract("0xdB35767119EB4c88b904deEA5Df7F20194E22A2c");
   const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
   const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
 
