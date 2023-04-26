@@ -1,5 +1,6 @@
 import { drug1 } from "../assets";
 import { useState,useEffect } from "react";
+import Card from "../components/Card";
 
 
 function Campaign() {
@@ -38,14 +39,19 @@ function Campaign() {
         />
         {isHovering && (
           <button
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 rounded-lg py-2 px-4 shadow-lg opacity-100 transition-opacity duration-300 z-2"
-            onMouseEnter={()=> {handleMouseEnter }}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500  py-2 px-4 shadow-lg opacity-100 transition-opacity duration-300 z-2 w-1/2 text-white font-semibold rounded-[20px]"
+            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={buttonStyle} // set the style of the button using state
           >
-            Click me
+            FOLLOW NOW!
           </button>
         )}
+        <div className = "flex flex-wrap">
+            <Card />
+            <Card />
+            <Card />
+        </div>
       </div>
     );
   }
