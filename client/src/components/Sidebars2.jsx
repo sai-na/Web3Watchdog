@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 // * React icons
 import { IoIosArrowBack } from "react-icons/io";
-import { GrAdd } from "react-icons/gr";
+import { GrAdd, GrAnnounce } from "react-icons/gr";
 
 
 import { AiOutlineAppstore, AiFillSetting } from "react-icons/ai";
@@ -150,9 +150,15 @@ const Sidebar2 = ({ mainContent }) => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/stroage"} className="link">
+                                <NavLink to={"/storage"} className="link">
                                     <HiOutlineDatabase size={23} className="min-w-max" />
-                                    Stroage
+                                    Storage
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={"/campaigns"} className="link">
+                                    <GrAnnounce size={23} className="min-w-max" />
+                                    Campaigns
                                 </NavLink>
                             </li>
 

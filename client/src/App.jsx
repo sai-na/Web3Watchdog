@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Sidebar, Navbar } from './components';
 import { CampaignDetails, CreateCampaign, Home, Profile } from './pages';
 import Admin from './pages/Admin';
+import Campaign from './pages/Campaign'
 import DisplayAdmin from './pages/DisplayAdmin';
 import DetailesAdmin from './pages/DetailesAdmin';
 import Sidebar2 from './components/Sidebars2';
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/post-details/:id" element={<CampaignDetails />} />
           <Route path="/admin-post-details/:id" element={<DetailesAdmin />} />
           <Route path="/admin-post" element={<Admin />} />
+          <Route path="/campaigns" element={<Campaign />} />
         </Routes>
       </div>
     </div>
