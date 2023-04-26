@@ -10,7 +10,8 @@ export const StateContextProvider = ({ children }) => {
   const { contract } = useContract("0xdB35767119EB4c88b904deEA5Df7F20194E22A2c");
   const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
   const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
-
+  const { mutateAsync: updatePublicView, } = useContractWrite(contract, "updatePublicView")
+  const { mutateAsync: rejectPost, } = useContractWrite(contract, "rejectPost")
   const upVote = async (id) => {
   //  debugger
     try {
@@ -154,8 +155,18 @@ export const StateContextProvider = ({ children }) => {
 
     return parsedDonations;
   };
-
-
+  const checkPolice= async (_id) => {
+    const data = await contract.call("isPolice", [_id])
+  }
+  const updatePublic= async (_id) => {
+    const data = await contract.call("updatePublicView", [_id])
+  }
+  const updatePolice= async (_id) => {
+    const data = await contract.call("updatePoliceView", [_id])
+  }
+  const reject= async (_id) => {
+    const data = await contract.call("rejectPost", [_id])
+  }
   return (
     <StateContext.Provider
       value={{
@@ -169,7 +180,11 @@ export const StateContextProvider = ({ children }) => {
         getAdminPost,
         getUserCampaigns,
         donate,
-        getDonations
+        getDonations,
+        updatePublic,
+        reject,
+        checkPolice,
+        updatePolice
       }}
     >
       {children}

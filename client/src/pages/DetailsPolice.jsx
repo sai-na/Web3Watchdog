@@ -7,10 +7,10 @@ import { CountBox, CustomButton, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
 import { profile1 } from '../assets';
 import { BiUpvote } from "react-icons/bi";
-function DetailesAdmin() {
+function DetailsPolice() {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const { donate, address,updatePolice,reject } = useStateContext();
+    const { donate, address,updatePublic,reject } = useStateContext();
 
     const [isLoading, setIsLoading] = useState(false);
     const [amount, setAmount] = useState('');
@@ -32,10 +32,10 @@ function DetailesAdmin() {
         setIsLoading(true);
 
         //await upVoteCall(state.pId,);
-       await updatePolice(state.pId);
+       await updatePublic(state.pId);
         //navigate('/');
         setIsLoading(false);
-       // updatePolice(state.pId);
+        updatePublic(state.pId);
         navigate('/')
 
     };
@@ -47,7 +47,7 @@ function DetailesAdmin() {
        await reject(state.pId);
         //navigate('/');
         setIsLoading(false);
-        updatePolice(state.pId);
+        updatePublic(state.pId);
         navigate('/')
 
     };
@@ -167,4 +167,4 @@ function DetailesAdmin() {
     );
 };
 
-export default DetailesAdmin;
+export default DetailsPolice;
