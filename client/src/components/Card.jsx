@@ -1,9 +1,9 @@
 import { IoLocationSharp } from 'react-icons/io5';
-import { MdDateRange } from 'react-icons/md';
+import { MdDateRange, MdPeople } from 'react-icons/md';
 
 import { format } from "date-fns";
 
-function Card({ owner, title, location, eventTime, amountCollected, image, handleClick }) {
+function Card({ owner, title, location, eventTime, description, amountCollected, image, handleClick }) {
 
     console.log(eventTime);
 
@@ -12,25 +12,56 @@ function Card({ owner, title, location, eventTime, amountCollected, image, handl
     const formattedDate = format(date, "d MMM yyyy");
 
     return (
+        <>
 
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow 00" onClick={handleClick}>
-            <a href="#">
-                <img className="rounded-t-lg w-full  object-cover h-64 " src={image} alt="" />
-            </a>
-            <div className="p-5">
-                <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{title}</h5>
-                </a>
-                <div className="flex gap-2"> <p className="mb-3 font-normal text-gray-700  flex items-center "><IoLocationSharp size={12} className='mr-2' />{location}</p>
-                    <p className="mb-3 font-normal text-gray-700  flex items-center "><MdDateRange size={12} className='mr-2' />{formattedDate}</p></div>
 
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 -700 ue-800">
-                    Read more
-                    <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                </a>
-            </div>
-        </div>
 
+
+            <div className=" m-2" onClick={handleClick} >
+                <div className="p-2  " >
+                    {/* <!-- Card --> */}
+                    <div className="w-72 min-h-[400px] p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+                        {/* <!-- Image --> */}
+                        <img className="h-40 object-cover rounded-xl" src={image} alt="" />
+
+                        <div className="p-2">
+                            <div className=" ">
+                                {/* <!-- Heading --> */}
+
+                                <p className="flex items-center justify-end">
+                                    <IoLocationSharp className=" mr-1 " />
+                                    {location}
+                                </p>
+                                <h2 className='mb-2 text-2xl font-bold tracking-tight text-gray-900'
+
+                                >
+                                    {title ? title : " Name"}
+                                </h2>
+                                <p className="text-gray-800 text-base">{formattedDate}</p>
+
+
+
+                                {/* <!-- Description --> */}
+                            </div>
+                            <p className="text-sm text-gray-600 line-clamp-3">
+                                {description && description}
+                            </p>
+                        </div>
+                        {/* <!-- CTA --> */}
+                        <div className="m-2">
+                            <button
+
+                                className="text-white bg-green-500 px-3 py-1 rounded-md hover:text-black hover:bg-green-400"
+                            >
+                                Read more...
+
+                            </button>
+                        </div>
+                    </div>
+                    {/* <!-- Card --> */}
+                </div>
+            </div >
+        </>
     );
 }
 
