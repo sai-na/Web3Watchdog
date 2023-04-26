@@ -131,11 +131,13 @@ export const StateContextProvider = ({ children }) => {
     return filteredCampaigns;
   };
 
-  const donate = async (pId, amount) => {
-    const data = await contract.call('donateToCampaign', pId, { value: ethers.utils.parseEther(amount) });
-
+  const donate = async (address, amount) => {
+   // debugger;
+    const data = await contract.call('transfer', address,  ethers.utils.parseEther(amount).toString() );
+   // const data = await contract.call("transfer", [address, amount])
     return data;
   };
+
 
   const getDonations = async (pId) => {
     const donations = await contract.call('getDonators', pId);
