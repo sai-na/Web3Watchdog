@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { ConnectWallet } from "@thirdweb-dev/react";
 import { useStateContext } from '../context';
 import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
@@ -86,6 +86,11 @@ const Navbar = () => {
                 if (address) navigate('create-campaign');
                 else connect();
               }}
+            />
+
+            <ConnectWallet
+              theme="light"
+              btnTitle="Connect Wallet"
             />
           </div>
         </div>
