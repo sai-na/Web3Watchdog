@@ -118,6 +118,7 @@ const CampaignDetails = () => {
             </p>
             <div className="mt-[30px]">
               <input
+                min={0.01}
                 type="number"
                 placeholder="ETH 0.1"
                 step="0.01"
@@ -145,4 +146,4 @@ const CampaignDetails = () => {
   );
 };
 
-export default CampaignDetails;;
+export default CampaignDetails;
