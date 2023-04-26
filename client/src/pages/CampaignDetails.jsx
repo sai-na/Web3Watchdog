@@ -11,8 +11,8 @@ import { BiUpvote } from "react-icons/bi";
 const CampaignDetails = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
-  const { donate, address } = useStateContext();
-
+  const { donate, address, upVote } = useStateContext();
+  
   const [isLoading, setIsLoading] = useState(false);
   const [amount, setAmount] = useState('');
   const [donators, setDonators] = useState([]);
@@ -28,8 +28,12 @@ const CampaignDetails = () => {
 
 
 
-  const handleupVoteCall = async () => {
+  const handleupVoteCall = async (id) => {
     //await upVoteCall(state.pId);
+    console.log("123");
+    setIsLoading(true);
+    await upVote(id);
+    setIsLoading(false);
 
 
   };
@@ -97,7 +101,7 @@ const CampaignDetails = () => {
           <div className='flex items-center gap-3 font-epilogue font-semibold text-[18px] text-white uppercase '>
             <p >Support the Creator by</p>
             <p> <span className='text-sky-500'>upvoting </span>   </p>
-            <button onClick={handleupVoteCall()} class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            <button onClick ={ () => {handleupVoteCall(state?.pId)}} class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 <BiUpvote />
               </span>

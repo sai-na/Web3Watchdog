@@ -9,13 +9,23 @@ const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract("0xc0254013616e40027a8D65442DfdC14C510759bb");
   const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
+  const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
 
+  const upVote = async (id) => {
+    debugger
+    try {
+      const data = await upvotePost([id]);
+      console.info("contract call successs", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  }
   const address = useAddress();
   const connect = useMetamask();
 
 
 
-  const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost");
+  //const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost");
 
   // const upVoteCall = async (_id) => {
 
@@ -152,7 +162,7 @@ export const StateContextProvider = ({ children }) => {
         connect,
         createCampaign: publishCampaign,
         publishPost,
-
+        upVote,
         getCampaigns,
         getAdminPost,
         getUserCampaigns,
