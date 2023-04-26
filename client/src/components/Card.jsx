@@ -9,6 +9,7 @@ function Card({ owner, title, location, eventTime, description, amountCollected,
 
     const date = eventTime ? eventTime : "";
 
+
     const formattedDate = format(date, "d MMM yyyy");
 
     return (
@@ -51,7 +52,7 @@ function Card({ owner, title, location, eventTime, description, amountCollected,
                         <div className="m-2">
                             <button
 
-                                className="text-white bg-green-500 px-3 py-1 rounded-md hover:text-black hover:bg-green-400"
+                                className="text-white bg-sky-500  px-3 py-1 rounded-md hover:text-black hover:bg-sky-400"
                             >
                                 Read more...
 
