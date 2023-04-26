@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRef } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
 // import SubMenu from "./SubMenu";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ import { } from "react-icons/tb";
 import { RiGalleryFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import { MdMenu } from "react-icons/md";
-import { NavLink, useLocation, useRoutes } from "react-router-dom";
+import { NavLink, useLocation, useRoutes, Link } from "react-router-dom";
 
 const Sidebar2 = ({ mainContent }) => {
     let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
@@ -118,12 +119,19 @@ const Sidebar2 = ({ mainContent }) => {
              min-h-screen"
                 >
                     <div className="flex items-center  gap-2.5 font-medium border-b py-3 border-slate-300  mx-3">
-                        <img
-                            src="https://img.icons8.com/color/512/firebase.png"
-                            width={45}
-                            alt=""
-                        />
-                        <span className="text-xl whitespace-pre overflow-x-hidden">Fireball</span>
+                        <Link className='flex  justify-center items-center' to="/">
+                            <Player
+                                autoplay
+                                speed={1.5}
+                                loop
+
+                                src="https://assets4.lottiefiles.com/private_files/lf30_er9xeac2.json"
+                                style={{ height: "90px", width: "60px" }}
+                            /> <span className=''></span>
+                        </Link>
+
+
+                        <span className="text-sky-500  font-bold text-xl whitespace-pre overflow-x-hidden">SoberHaven</span>
                     </div>
 
                     <div className="flex flex-col  h-full">
@@ -166,19 +174,7 @@ const Sidebar2 = ({ mainContent }) => {
                                 </NavLink>
                             </li>
                         </ul>
-                        {open && (
-                            <div className="flex-1 text-sm z-50  max-h-48 my-auto  whitespace-pre   w-full  font-medium  ">
-                                <div className="flex border-y border-slate-300 p-4 items-center justify-between">
-                                    <div>
-                                        <p>Spark</p>
-                                        <small>No-cost $0/month</small>
-                                    </div>
-                                    <p className="text-teal-500 py-1.5 px-3 text-xs bg-teal-50 rounded-xl">
-                                        Upgrade
-                                    </p>
-                                </div>
-                            </div>
-                        )}
+
                     </div>
                     <motion.div
                         onClick={() => {
