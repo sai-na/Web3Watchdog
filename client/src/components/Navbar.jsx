@@ -32,6 +32,11 @@ const Navbar = () => {
             else connect();
           }}
         />
+
+        <ConnectWallet
+
+          btnTitle="Connect Wallet"
+        />
         {/* 
         <Link to="/profile">
           <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
@@ -88,10 +93,7 @@ const Navbar = () => {
               }}
             />
 
-            <ConnectWallet
-              theme="light"
-              btnTitle="Connect Wallet"
-            />
+
           </div>
         </div>
       </div>
