@@ -1,0 +1,1 @@
+{"version":3,"file":"MetamaskScan.d.ts","sourceRoot":"../../../../../../../src/wallet/ConnectWallet/screens/Metamask","sources":["MetamaskScan.tsx"],"names":[],"mappings":";AAWA,eAAO,MAAM,YAAY,EAAE,KAAK,CAAC,EAAE,CAAC;IAClC,MAAM,EAAE,MAAM,IAAI,CAAC;IACnB,YAAY,EAAE,MAAM,IAAI,CAAC;IACzB,WAAW,EAAE,MAAM,IAAI,CAAC;CACzB,CAmCA,CAAC"}

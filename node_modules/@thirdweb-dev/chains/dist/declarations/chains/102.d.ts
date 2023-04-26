@@ -1,0 +1,25 @@
+declare const _default: {
+    readonly name: "Web3Games Testnet";
+    readonly chain: "Web3Games";
+    readonly icon: {
+        readonly url: "ipfs://QmUc57w3UTHiWapNW9oQb1dP57ymtdemTTbpvGkjVHBRCo";
+        readonly width: 192;
+        readonly height: 192;
+        readonly format: "png";
+    };
+    readonly rpc: readonly ["https://web3games-testnet.rpc.thirdweb.com/${THIRDWEB_API_KEY}", "https://testnet-rpc-0.web3games.org/evm", "https://testnet-rpc-1.web3games.org/evm", "https://testnet-rpc-2.web3games.org/evm"];
+    readonly faucets: readonly [];
+    readonly nativeCurrency: {
+        readonly name: "Web3Games";
+        readonly symbol: "W3G";
+        readonly decimals: 18;
+    };
+    readonly infoURL: "https://web3games.org/";
+    readonly shortName: "tw3g";
+    readonly chainId: 102;
+    readonly networkId: 102;
+    readonly testnet: true;
+    readonly slug: "web3games-testnet";
+};
+export default _default;
+//# sourceMappingURL=102.d.ts.map

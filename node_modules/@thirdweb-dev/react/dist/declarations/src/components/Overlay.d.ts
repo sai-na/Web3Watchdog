@@ -1,0 +1,58 @@
+/// <reference types="react" />
+export declare const Overlay: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme | undefined;
+    as?: import("react").ElementType<any> | undefined;
+} & {
+    theme?: {
+        overlay: {
+            subdued: string;
+        };
+        bg: {
+            base: string;
+            baseHover: string;
+            elevated: string;
+            elevatedHover: string;
+            highlighted: string;
+            inverted: string;
+            invertedFocused: string;
+            danger: string;
+        };
+        border: {
+            base: string;
+            elevated: string;
+        };
+        badge: {
+            secondary: string;
+        };
+        text: {
+            neutral: string;
+            inverted: string;
+            secondary: string;
+            danger: string;
+        };
+        icon: {
+            secondary: string;
+            primary: string;
+            inverted: string;
+            danger: string;
+            success: string;
+            link: string;
+        };
+        link: {
+            primary: string;
+            primaryHover: string;
+        };
+        input: {
+            bg: string;
+            bgHover: string;
+            outline: string;
+            focusRing: string;
+            errorRing: string;
+        };
+        tooltip: {
+            bg: string;
+            text: string;
+        };
+    } | undefined;
+}, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+//# sourceMappingURL=Overlay.d.ts.map

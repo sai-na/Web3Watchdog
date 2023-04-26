@@ -1,0 +1,1 @@
+{"version":3,"file":"role.d.ts","sourceRoot":"../../../../../src/evm/common","sources":["role.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAU,MAAM,QAAQ,CAAC;AAE3C;;;GAGG;AACH,QAAA,MAAM,OAAO;;;;;;;;;CASH,CAAC;AAEX;;GAEG;AACH,MAAM,MAAM,IAAI,GAAG,MAAM,OAAO,OAAO,CAAC;AAExC;;GAEG;AACH,eAAO,MAAM,SAAS,4FAAiC,CAAC;AAExD;;GAEG;AACH,wBAAgB,WAAW,CAAC,IAAI,EAAE,IAAI,GAAG,SAAS,CAKjD"}

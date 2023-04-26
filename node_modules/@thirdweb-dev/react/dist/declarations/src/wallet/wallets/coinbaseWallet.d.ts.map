@@ -1,0 +1,1 @@
+{"version":3,"file":"coinbaseWallet.d.ts","sourceRoot":"../../../../../src/wallet/wallets","sources":["coinbaseWallet.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;AACvD,OAAO,KAAK,EAAU,aAAa,EAAE,MAAM,0BAA0B,CAAC;AAEtE,eAAO,MAAM,cAAc;;;;;;sBAIL,aAAa;CAElC,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"CoinbaseScan.d.ts","sourceRoot":"../../../../../../../src/wallet/ConnectWallet/screens/Coinbase","sources":["CoinbaseScan.tsx"],"names":[],"mappings":";AAUA,eAAO,MAAM,YAAY,EAAE,KAAK,CAAC,EAAE,CAAC;IAClC,MAAM,EAAE,MAAM,IAAI,CAAC;IACnB,YAAY,EAAE,MAAM,IAAI,CAAC;IACzB,WAAW,EAAE,MAAM,IAAI,CAAC;CACzB,CAyCA,CAAC"}

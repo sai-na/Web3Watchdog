@@ -1,0 +1,1 @@
+{"version":3,"file":"legacy.d.ts","sourceRoot":"../../../../../src/evm/common","sources":["legacy.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,MAAM,EAAE,MAAM,QAAQ,CAAC;AAEhC,wBAAsB,eAAe,CACnC,OAAO,EAAE,MAAM,EACf,QAAQ,EAAE,MAAM,CAAC,SAAS,CAAC,QAAQ,GAClC,OAAO,CAAC;IAAE,IAAI,EAAE,MAAM,CAAC;IAAC,OAAO,EAAE,MAAM,CAAA;CAAE,GAAG,SAAS,CAAC,CAoBxD"}

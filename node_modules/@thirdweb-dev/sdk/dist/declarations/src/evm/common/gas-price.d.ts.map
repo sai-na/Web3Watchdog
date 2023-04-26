@@ -1,0 +1,1 @@
+{"version":3,"file":"gas-price.d.ts","sourceRoot":"../../../../../src/evm/common","sources":["gas-price.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,qBAAqB,CAAC;AAE9C,OAAO,EAAE,SAAS,EAAU,MAAM,QAAQ,CAAC;AA+B3C;;;;GAIG;AACH,wBAAsB,wBAAwB,CAC5C,OAAO,EAAE,OAAO,CAAC,OAAO,GAAG,OAAO,CAAC,MAAM,GACxC,OAAO,CAAC,SAAS,CAAC,CAcpB"}

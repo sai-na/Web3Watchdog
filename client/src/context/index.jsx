@@ -10,9 +10,9 @@ export const StateContextProvider = ({ children }) => {
   const { contract } = useContract("0xc0254013616e40027a8D65442DfdC14C510759bb");
   const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
   const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
-
+  const { mutateAsync: updatePublicView, } = useContractWrite(contract, "updatePublicView")
   const upVote = async (id) => {
-    debugger
+    //debugger
     try {
       const data = await upvotePost([id]);
       console.info("contract call successs", data);
@@ -37,7 +37,9 @@ export const StateContextProvider = ({ children }) => {
   //   }
   // };
 
-
+const updatePublic= async (_id) => {
+  const data = await contract.call("updatePublicView", [_id])
+}
 
   const publishPost = async (form) => {
     console.log(form);
@@ -169,7 +171,8 @@ export const StateContextProvider = ({ children }) => {
         getAdminPost,
         getUserCampaigns,
         donate,
-        getDonations
+        getDonations,
+        updatePublic
       }}
     >
       {children}

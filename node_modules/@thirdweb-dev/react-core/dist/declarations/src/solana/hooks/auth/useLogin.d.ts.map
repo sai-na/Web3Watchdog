@@ -1,0 +1,1 @@
+{"version":3,"file":"useLogin.d.ts","sourceRoot":"../../../../../../src/solana/hooks/auth","sources":["useLogin.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EACV,YAAY,EAGb,MAAM,oBAAoB,CAAC;AAK5B,MAAM,WAAW,WAAW;IAC1B;;OAEG;IACH,UAAU,CAAC,EAAE,MAAM,CAAC;IACpB;;OAEG;IACH,OAAO,CAAC,EAAE,CAAC,KAAK,EAAE,MAAM,KAAK,IAAI,CAAC;CACnC;AAED;;;;;;;;GAQG;AACH,wBAAgB,QAAQ;sBAyCF,YAAY;;EAGjC"}
