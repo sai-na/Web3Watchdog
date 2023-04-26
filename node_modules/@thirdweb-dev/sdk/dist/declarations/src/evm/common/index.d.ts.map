@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"../../../../../src/evm/common","sources":["index.ts"],"names":[],"mappings":"AAAA,cAAc,SAAS,CAAC;AACxB,cAAc,aAAa,CAAC;AAC5B,cAAc,QAAQ,CAAC;AACvB,cAAc,qBAAqB,CAAC;AACpC,cAAc,qBAAqB,CAAC;AACpC,cAAc,mBAAmB,CAAC;AAClC,cAAc,YAAY,CAAC;AAC3B,OAAO,EACL,yBAAyB,EACzB,4BAA4B,GAC7B,MAAM,oBAAoB,CAAC;AAC5B,OAAO,EAAE,uBAAuB,EAAE,MAAM,OAAO,CAAC"}

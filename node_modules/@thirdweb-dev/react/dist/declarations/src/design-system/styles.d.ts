@@ -1,0 +1,6 @@
+export declare const scrollbar: ({ track, thumb, hover, }: {
+    track: string;
+    hover: string;
+    thumb: string;
+}) => string;
+//# sourceMappingURL=styles.d.ts.map

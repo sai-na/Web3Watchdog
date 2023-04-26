@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 import { useStateContext } from '../context';
 import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
 import { navlinks } from '../constants';
-
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
@@ -32,6 +33,10 @@ const Navbar = () => {
             else connect()
           }}
         />
+         <ConnectWallet
+  theme="light"
+  btnTitle="Connect Wallet"
+/>
 {/* 
         <Link to="/profile">
           <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
@@ -76,7 +81,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-
+            
             <div className="flex mx-4">
             <CustomButton 
               btnType="button"
@@ -88,6 +93,8 @@ const Navbar = () => {
               }}
             />
             </div>
+           
+           
           </div>
         </div>
     </div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"ifWaiting.d.ts","sourceRoot":"../../../../../src/evm/utils","sources":["ifWaiting.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AACH,wBAAsB,SAAS,CAAC,OAAO,EAAE;IACvC,GAAG,EAAE,OAAO,CAAC,GAAG,CAAC,CAAC;IAClB,QAAQ,EAAE,MAAM,CAAC;IACjB,EAAE,EAAE,MAAM,IAAI,CAAC;CAChB,iBAIA"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"SplitRecipient.d.ts","sourceRoot":"../../../../../src/evm/types","sources":["SplitRecipient.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAEpC;;GAEG;AACH,MAAM,WAAW,cAAc;IAC7B;;OAEG;IACH,OAAO,EAAE,OAAO,CAAC;IAEjB;;;;;OAKG;IACH,eAAe,EAAE,MAAM,CAAC;CACzB"}
