@@ -9,7 +9,7 @@ import Card from '../components/Card';
 // useEffect(() => {
 //     if (contract) fetchCampaigns();
 // }, [address, contract]);
-const DisplayAdmin = ({ title, isLoading, posts, isAdmin = false }) => {
+const DisplayPolice = ({ title, isLoading, posts, isAdmin = false }) => {
     const [sortedPosts, setSortedPosts] = useState([]);
     const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const DisplayAdmin = ({ title, isLoading, posts, isAdmin = false }) => {
     const handleNavigate = (post) => {
         console.log("post");
         console.log(post.eventTime);
-        navigate(`/admin-post-details/${post.title}`, { state: post });
+        navigate(`/police-post-details/${post.title}`, { state: post });
     };
 
     console.log(sortedPosts);
@@ -80,4 +80,4 @@ const DisplayAdmin = ({ title, isLoading, posts, isAdmin = false }) => {
     );
 };
 
-export default DisplayAdmin;
+export default DisplayPolice;

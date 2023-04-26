@@ -7,12 +7,13 @@ import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract("0xc0254013616e40027a8D65442DfdC14C510759bb");
+  const { contract } = useContract("0xdB35767119EB4c88b904deEA5Df7F20194E22A2c");
   const { mutateAsync: createPost } = useContractWrite(contract, 'createPost');
   const { mutateAsync: upvotePost, isLoading } = useContractWrite(contract, "upvotePost")
-
+  const { mutateAsync: updatePublicView, } = useContractWrite(contract, "updatePublicView")
+  const { mutateAsync: rejectPost, } = useContractWrite(contract, "rejectPost")
   const upVote = async (id) => {
-    debugger
+  //  debugger
     try {
       const data = await upvotePost([id]);
       console.info("contract call successs", data);
@@ -154,8 +155,21 @@ export const StateContextProvider = ({ children }) => {
 
     return parsedDonations;
   };
-
-
+  const checkPolice= async (_id) => {
+    const data = await contract.call("isPolice", [_id])
+  }
+  const checkAdmin= async (_id) => {
+    const data = await contract.call("isAdmin", [_id])
+  }
+  const updatePublic= async (_id) => {
+    const data = await contract.call("updatePublicView", [_id])
+  }
+  const updatePolice= async (_id) => {
+    const data = await contract.call("updatePoliceView", [_id])
+  }
+  const reject= async (_id) => {
+    const data = await contract.call("rejectPost", [_id])
+  }
   return (
     <StateContext.Provider
       value={{
@@ -169,7 +183,12 @@ export const StateContextProvider = ({ children }) => {
         getAdminPost,
         getUserCampaigns,
         donate,
-        getDonations
+        getDonations,
+        updatePublic,
+        reject,
+        checkPolice,
+        updatePolice,
+        checkAdmin
       }}
     >
       {children}
