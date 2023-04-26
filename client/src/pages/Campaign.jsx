@@ -1,9 +1,53 @@
+import { drug1 } from "../assets";
+import { useState,useEffect } from "react";
+
+
 function Campaign() {
+    const [isHovering, setIsHovering] = useState(false);
+    const [buttonStyle, setButtonStyle] = useState({
+      zIndex: 1, // set the initial z-index value of the button
+    });
+    const [Opacity, setOpacity] = useState({
+        opacity:100
+    })
+  
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+      setButtonStyle({
+        ...buttonStyle,
+        zIndex: 2, // set the z-index to a higher value on hover
+      });
+    };
+  
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+      setButtonStyle({
+        ...buttonStyle,
+        zIndex: 1, // reset the z-index back to its initial value when the mouse leaves
+      });
+    };
+  
     return (
-        <>
-            <div className=" border-black  w-full h-1/2 flex border-2 rounded-md">hi how are you</div>
-        </>
-    )
-}
+      <div className="relative">
+        <img
+          src={drug1}
+          alt="Example image"
+          className="w-full opacity-100 hover:opacity-75 transition-opacity duration-300"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        />
+        {isHovering && (
+          <button
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 rounded-lg py-2 px-4 shadow-lg opacity-100 transition-opacity duration-300 z-2"
+            onMouseEnter={()=> {handleMouseEnter }}
+            onMouseLeave={handleMouseLeave}
+            style={buttonStyle} // set the style of the button using state
+          >
+            Click me
+          </button>
+        )}
+      </div>
+    );
+  }
 
 export default Campaign;
