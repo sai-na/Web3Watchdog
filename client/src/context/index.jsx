@@ -158,6 +158,9 @@ export const StateContextProvider = ({ children }) => {
   const checkPolice= async (_id) => {
     const data = await contract.call("isPolice", [_id])
   }
+  const checkAdmin= async (_id) => {
+    const data = await contract.call("isAdmin", [_id])
+  }
   const updatePublic= async (_id) => {
     const data = await contract.call("updatePublicView", [_id])
   }
@@ -184,7 +187,8 @@ export const StateContextProvider = ({ children }) => {
         updatePublic,
         reject,
         checkPolice,
-        updatePolice
+        updatePolice,
+        checkAdmin
       }}
     >
       {children}

@@ -12,9 +12,12 @@ import Sidebar2 from './components/Sidebars2';
 import { useStateContext } from './context';
 import Police from './pages/Police';
 const App = () => {
-  const { checkPolice } = useStateContext();
+  const { checkPolice , checkAdmin} = useStateContext();
 const  isPolice = async ()=>{
    return await checkPolice(state.pId);
+}
+const  isAdmin = async ()=>{
+  return await checkAdmin(state.pId);
 }
   return (
     <div className="relative overflow-hidden sm:-8 p-4 bg-[#ffffff] min-h-screen flex flex-row">
@@ -31,7 +34,7 @@ const  isPolice = async ()=>{
           <Route path="/create-report" element={<CreateCampaign />} />
           <Route path="/post-details/:id" element={<CampaignDetails />} />
           <Route path="/admin-post-details/:id" element={<DetailesAdmin />} />
-         {<Route path="/admin-post" element={!checkPolice?<Home/>: <Admin />} /> 
+         {<Route path="/admin-post" element={!checkAdmin?<Home/>: <Admin />} /> 
          }
          { 
          //<Route path="/admin-post" element={ <Admin />} />
