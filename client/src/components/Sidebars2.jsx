@@ -143,9 +143,10 @@ const Sidebar2 = ({ mainContent }) => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/authentication"} className="link">
+                                <NavLink to={"/create-report"} className="link">
                                     <GrAdd size={23} className="min-w-max" />
-                                    Authentication
+
+                                    Report
                                 </NavLink>
                             </li>
                             <li>
