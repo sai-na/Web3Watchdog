@@ -6,14 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.linear-gradient {
-  background: linear-gradient(
-    179.14deg,
-    rgba(32, 18, 63, 0) -7.14%,
-    #000000 87.01%
-  );
+html {
+  background: "#000000";
 }
-
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(0.8);
