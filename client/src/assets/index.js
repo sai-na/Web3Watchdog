@@ -14,6 +14,10 @@ import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import profile1 from './profile-1.jpg';
 import drug1 from './drug.jpeg'
+import img3 from './img3.jpeg'
+import drg from './drg.jpeg'
+import drg3 from './drg3.jpeg'
+import drg4 from './drg4.jpeg'
 
 export {
   tagType,
@@ -31,5 +35,9 @@ export {
   money,
   loader,
   thirdweb,
-  drug1
+  drug1,
+  img3,
+  drg,
+  drg3,
+  drg4
 };

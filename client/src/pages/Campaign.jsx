@@ -1,6 +1,10 @@
 import { drug1 } from "../assets";
 import { useState,useEffect } from "react";
-import Card from "../components/Card";
+import { img3 } from "../assets";
+import { drg } from "../assets";
+import { drg3 } from "../assets";
+import { drg4 } from "../assets";
+import CardCampaign from "../components/CardCampain";
 
 
 function Campaign() {
@@ -29,6 +33,7 @@ function Campaign() {
     };
   
     return (
+        <>
       <div className="relative">
         <img
           src={drug1}
@@ -47,12 +52,16 @@ function Campaign() {
             FOLLOW NOW!
           </button>
         )}
-        <div className = "flex flex-wrap">
-            <Card />
-            <Card />
-            <Card />
         </div>
-      </div>
+        
+        <div className = "flex flex-wrap align-center items-center mt-4 justify-center">
+            <CardCampaign title={"drugs are not good"} hash1 = {"robin"} hash2= {"port"} src = { img3 }/>
+            <CardCampaign title={" never do drugs"} hash1 = {"is"} hash2= {"of"} src = { drg }/>
+            <CardCampaign title={"why you should not do drugs"} hash1 = {"dead"} hash2 = {"kochi"} src = { drg3 }/>
+            <CardCampaign title={"why drugs do to your body"} hash1 = {"dead"} hash2 = {"kochi"} src = {drg4}/>
+        </div>
+      
+      </>
     );
   }
 
