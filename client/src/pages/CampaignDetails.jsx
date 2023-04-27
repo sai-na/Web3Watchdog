@@ -20,7 +20,7 @@ const CampaignDetails = () => {
 
 
 
-  const date = new Date();
+  const date = state?.eventDate ? state?.eventDate : new Date();
 
   const formattedDate = format(date, "d MMM yyyy");
 

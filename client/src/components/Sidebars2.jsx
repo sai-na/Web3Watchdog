@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 // * React icons
 import { IoIosArrowBack } from "react-icons/io";
 import { GrAdd, GrAnnounce } from "react-icons/gr";
-import {GiPoliceBadge} from "react-icons/gi"
-import {RiAdminFill} from "react-icons/ri"
+import { GiPoliceBadge } from "react-icons/gi";
+import { RiAdminFill } from "react-icons/ri";
 
 
 import { AiOutlineAppstore, AiFillSetting } from "react-icons/ai";
@@ -133,7 +133,7 @@ const Sidebar2 = ({ mainContent }) => {
                         </Link>
 
 
-                        <span className="text-sky-500  font-bold text-xl whitespace-pre overflow-x-hidden">SoberHaven</span>
+                        <span className="text-sky-500  font-bold text-xl whitespace-pre overflow-x-hidden">Web3Watchdog</span>
                     </div>
 
                     <div className="flex flex-col  h-full">

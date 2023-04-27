@@ -5,7 +5,7 @@ import { useStateContext } from '../context';
 import { CustomButton } from './';
 import { logo, menu, search, thirdweb } from '../assets';
 import { navlinks } from '../constants';
-
+import { Player } from "@lottiefiles/react-lottie-player";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
@@ -47,8 +47,16 @@ const Navbar = () => {
 
       {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
-        <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-          <img src={logo} alt="user" className="w-[60%] h-[60%] object-contain" />
+        <div className="w-[40px] h-[40px] rounded-[10px]  flex justify-center items-center cursor-pointer">
+          <Link className='flex  justify-center items-center' to="/">
+            <Player
+              autoplay
+              speed={1.5}
+              loop
+              src="https://assets4.lottiefiles.com/private_files/lf30_er9xeac2.json"
+              style={{ height: "60px", width: "60px" }}
+            /> <span className='text-sky-500 text-xl font-bold'>Web3Watchdog</span>
+          </Link>
         </div>
 
         <img
@@ -58,12 +66,12 @@ const Navbar = () => {
           onClick={() => setToggleDrawer((prev) => !prev)}
         />
 
-        <div className={`absolute top-[60px] right-0 left-0 bg-[#1c1c24] z-10 shadow-secondary py-4 ${!toggleDrawer ? '-translate-y-[100vh]' : 'translate-y-0'} transition-all duration-700`}>
+        <div className={`absolute top-[60px] right-0 left-0 bg-[#fff] z-10 shadow-secondary py-4 ${!toggleDrawer ? '-translate-y-[100vh]' : 'translate-y-0'} transition-all duration-700`}>
           <ul className="mb-4">
             {navlinks.map((link) => (
               <li
                 key={link.name}
-                className={`flex p-4 ${isActive === link.name && 'bg-[#3a3a43]'}`}
+                className={`flex p-4 ${isActive === link.name && 'bg-[#ffffff]'}`}
                 onClick={() => {
                   setIsActive(link.name);
                   setToggleDrawer(false);
