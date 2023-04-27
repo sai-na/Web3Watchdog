@@ -117,6 +117,7 @@ export const StateContextProvider = ({ children }) => {
       postTime: item.postTime,
       showPolice: item.showPolice,
       showPublic: item.showPublic,
+      rejected: item.rejected,
       pId: i
     }));
     console.log(parsedAdminPosts);

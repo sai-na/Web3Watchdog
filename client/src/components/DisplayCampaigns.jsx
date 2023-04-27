@@ -7,7 +7,7 @@ import Card from './Card';
 
 
 
-const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
+const DisplayCampaigns = ({ title, isLoading, posts, }) => {
   const [sortedPosts, setSortedPosts] = useState([]);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
 
   let postt = posts.filter((item, index) => {
     // Keep all items except for the one with title 'sge4g w4twt'
-    return item.showPublic !== false;
+    return (item.showPublic !== false || (item.showPublic !== false && item.rejected === false));
   });
 
   useEffect(() => {

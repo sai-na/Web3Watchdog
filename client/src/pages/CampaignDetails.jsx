@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { IoLocationSharp } from 'react-icons/io5';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { ethers } from 'ethers';
 import { format } from "date-fns";
@@ -74,7 +75,7 @@ const CampaignDetails = () => {
 
           {/* Section 2 */}
 
-          <div className="bg-white">
+          <div className="bg-white mt-16">
             <div className="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
               {/* <!-- Product --> */}
               <div className="lg:grid lg:grid-rows-1 lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
@@ -123,9 +124,16 @@ const CampaignDetails = () => {
 
                   {CourseCode}
                 </p>} */}
-                  {formattedDate && <div className="my-2 flex-col sm:flex-row flex sm:flex-none  items-start font-bold text-gray-900 text-xl  sm:items-center ">
 
-                    <div className="sm:mb-0 mx-1 mb-2">Event time </div>  <div className="">{` ${formattedDate}`}</div>
+
+
+                  {<div className="my-2 flex-col sm:flex-row flex sm:flex-none  items-start font-bold text-gray-900 text-xl  sm:items-center ">
+
+                    <div className="sm:mb-0 mx-1 mb-2">Event time </div>  <div className="">{` ${formattedDate}`}</div></div>}
+                  {state?.location && <div className="my-2 flex-col sm:flex-row flex sm:flex-none  items-start font-bold text-gray-900 text-xl  sm:items-center ">
+
+                    <div className="sm:mb-0 mx-1 mb-2">                    <IoLocationSharp className=" mr-1 " />
+                    </div>  <div className="">{` ${state?.location}`}</div>
 
 
                   </div>}

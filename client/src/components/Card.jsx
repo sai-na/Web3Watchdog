@@ -23,7 +23,7 @@ function Card({ owner, title, location, eventTime, description, amountCollected,
                     {/* <!-- Card --> */}
                     <div className="w-72 min-h-[400px] p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
                         {/* <!-- Image --> */}
-                        <img className="h-40 object-cover rounded-xl" src={image} alt="" />
+                        <img className="h-40 object-cover rounded-xl w-full" src={image} alt="" />
 
                         <div className="p-2">
                             <div className=" ">
