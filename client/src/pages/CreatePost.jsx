@@ -184,7 +184,7 @@ const CreatePost = () => {
             value={form.time}
             handleChange={(e) => handleFormFieldChange("time", e)}
           />
-          {console.log(form).time};
+
         </div>
 
         {/* <FormField
