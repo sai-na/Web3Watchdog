@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import FundCard from './FundCard';
 import { loader } from '../assets';
@@ -51,30 +51,38 @@ const DisplayCampaigns = ({ title, isLoading, posts, isAdmin = false }) => {
   console.log(sortedPosts);
 
   return (
+    <>
 
-    <div className='bg-white'>
-      <h1 className="font-epilogue font-semibold text-[18px] text-black text-left">{title} ({postt?.length})</h1>
 
-      <div className="flex flex-wrap mt-[20px] gap-[26px]">
-        {isLoading && (
-          <img src={loader} alt="loader" className="w-[100px] h-[100px] object-contain" />
-        )}
+      <div className='bg-white'>
+        <h1 className="font-epilogue font-semibold text-[18px] text-black text-left">{title} ({postt?.length})</h1>
 
-        {!isLoading && sortedPosts?.length === 0 && (
-          <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]">
-            You have not created any campigns yet
-          </p>
-        )}
+        <div className="flex flex-wrap mt-[20px] gap-[26px]">
+          {isLoading && (
+            <img src={loader} alt="loader" className="w-[100px] h-[100px] object-contain" />
+          )}
 
-        {!isLoading && sortedPosts?.length > 0 && sortedPosts?.map((post, index) => <Card
-          key={index}
-          {...post}
+          {!isLoading && sortedPosts?.length === 0 && (
+            <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]">
+              You have not created any campigns yet
+            </p>
+          )}
 
-          handleClick={() => handleNavigate(post)
-          }
-        />)}
+          {!isLoading && sortedPosts?.length > 0 && sortedPosts?.map((post, index) => <Card
+            key={index}
+            {...post}
+
+            handleClick={() => handleNavigate(post)
+            }
+          />)}
+        </div>
       </div>
-    </div>
+
+      {/* new */}
+
+
+
+    </>
   );
 };
 
