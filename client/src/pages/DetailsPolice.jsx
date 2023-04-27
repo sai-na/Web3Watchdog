@@ -20,7 +20,8 @@ function DetailsPolice() {
 
 
 
-    const date = new Date();
+
+    const date = state?.eventDate ? state?.eventDate : new Date();
 
     const formattedDate = format(date, "d MMM ");
 

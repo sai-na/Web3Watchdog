@@ -19,7 +19,7 @@ const DisplayPolice = ({ title, isLoading, posts, isAdmin = false }) => {
 
     let postt = posts.filter((item, index) => {
         // Keep all items except for the one with title 'sge4g w4twt'
-        return item.title !== ('Et sed id ullam cul' || 'Drug abuse at Kozhikode') && item.showPolice !== false;
+        return item.showPolice !== false;
     });
 
     useEffect(() => {
