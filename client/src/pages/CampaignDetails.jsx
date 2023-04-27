@@ -102,28 +102,7 @@ const CampaignDetails = () => {
 
                     </div>
                   </div>
-                  {/* 
-                {CourseDuration && <p className="my-2 font-bold text-gray-900 text-xl flex items-center ">
-                  {" "}
-                  Duration <MdAccessTimeFilled className=" mx-1 " /> :{" "}
-                  {CourseDuration}
-                </p>} */}
 
-
-
-                  {/* // noOfStdView &&
-                  // <p className="my-2 font-bold text-gray-900 text-xl flex items-center">
-                  //   <MdPeople className=" mr-2 " /> Students  {noOfStdView}
-                  // </p> */}
-
-
-                  {/* 
-                {CourseCode && <p className="my-2 font-bold text-gray-900 text-xl flex items-center ">
-
-                  Course Code <FaSlackHash className=" mx-1 " /> :{" "}
-
-                  {CourseCode}
-                </p>} */}
 
 
 
