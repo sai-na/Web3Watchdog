@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -21,7 +22,7 @@ function DetailsPolice() {
 
     const date = new Date();
 
-    const formattedDate = format(date, "d MMM yyyy");
+    const formattedDate = format(date, "d MMM ");
 
 
 
@@ -109,7 +110,7 @@ function DetailsPolice() {
 
                                 {<div className="my-2 flex-col sm:flex-row flex sm:flex-none  items-start font-bold text-gray-900 text-xl  sm:items-center ">
 
-                                    <div className="sm:mb-0 mx-1 mb-2">Event time </div>  <div className="">{` ${formattedDate}`}</div></div>}
+                                    <div className="sm:mb-0 mx-1 mb-2">Event time </div>  <div className="">{`${formattedDate} 2023`}</div></div>}
                                 {state?.location && <div className="my-2 flex-col sm:flex-row flex sm:flex-none  items-start font-bold text-gray-900 text-xl  sm:items-center ">
 
                                     <div className="sm:mb-0 mx-1 mb-2">                    <IoLocationSharp className=" mr-1 " />

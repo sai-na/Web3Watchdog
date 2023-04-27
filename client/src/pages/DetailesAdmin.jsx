@@ -20,7 +20,7 @@ function DetailesAdmin() {
 
     const date = new Date();
 
-    const formattedDate = format(date, "d MMM yyyy");
+    const formattedDate = format(date, "d MMM ");
 
 
 
@@ -103,7 +103,7 @@ function DetailesAdmin() {
                     <div>
                         <h4 className="font-epilogue font-semibold text-[18px] text-black uppercase">Description</h4>
                         <p className="font-epilogue mt-4 font-normal text-[16px] text-[#808191] leading-[26px] text-justify ">
-                            <span className='font-bold'>Event time</span><br />{formattedDate}</p>
+                            <span className='font-bold'>Event time</span><br />{`${formattedDate} 2023`}</p>
                         <div className="mt-[20px]">
 
                             <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">{state?.description}</p>
