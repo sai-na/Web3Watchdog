@@ -25,38 +25,18 @@ function makeStorageClient() {
 }
 
 const CreatePost = () => {
-  useEffect(() => {
 
-  }, [storeFiles, getFiles]);
   const [flag, setFlag] = useState(false);
   const [link, setLink] = useState("");
   const [name, setName] = useState("");
-  // const [isLoading, setIsLoading] = useState(false);
-  async function storeFiles(files) {
-    const client = makeStorageClient();
-    // setIsLoading(true);
-
-    let f = files;
-
-    const cid = await client.put(files);
-    debugger;
-    //  setIsLoading(false);
-    console.log('stored files with cid:', cid);
-    setLink(cid);
-    setFlag(true);
-    //return cid
-  }
-  const [file, setFile] = useState();
-  function getFiles() {
-    const fileInput = document.querySelector('input[type="file"]');
-    var newString = fileInput.files[0].name.replace(/ /g, "%20");
-    setName(newString);
-    console.log(fileInput.files[0]);
-    return fileInput.files;
-
-  }
-  const navigate = useNavigate();
+  const [final, setFinal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingImg, setIsLoadingImg] = useState(false);
+  const [selectedFile, setSelectedFile] = useState();
+
+
+  const navigate = useNavigate();
+
   const { publishPost } = useStateContext();
   const [form, setForm] = useState({
     title: "",
@@ -66,14 +46,78 @@ const CreatePost = () => {
     time: "",
   });
 
+
+
+
+
+  //  // const [isLoading, setIsLoading] = useState(false);
+  //   async function storeFiles(files) {
+  //     const client = makeStorageClient();
+  //    // setIsLoading(true);
+  //     const cid = await client.put(files)
+  //   //  setIsLoading(false);
+  //     console.log('stored files with cid:', cid)
+  //     setLink(cid);
+
+  //     //console.log(link);
+  //     setFlag(true);
+  //     return cid
+  //   }
+
+  // const [file, setFile] = useState()
+  // function getFiles () {
+  //   const fileInput = document.querySelector('input[type="file"]')
+  //   var newString = fileInput.files[0].name.replace(/ /g, "%20");
+
+  //   console.log(fileInput.files[0])
+  //   //console.log(link)
+  //   setFinal(`https://${link}.ipfs.w3s.link/${newString}`)   
+  //   console.log(final)
+  //   return fileInput.files
+
+  //}
+
+
+
+  // new
+  const handleImage = async (e) => {
+    // Files
+
+    if (e.target.files) {
+      setIsLoadingImg(true);
+
+      const fileInput = document.querySelector('input[type="file"]');
+      var newString = fileInput.files[0].name.replace(/ /g, "%20");
+
+      let g = e.target.files;
+      let f = e.target.files[0].name;
+
+      setSelectedFile(e.target.files[0]);
+      const client = makeStorageClient();
+      const cid = await client.put(fileInput.files);
+      console.log('stored files with cid:', cid);
+      console.log(e.target.files[0].name);
+      console.log(`https://${cid}.ipfs.w3s.link/${newString}`);
+      setFinal(`https://${cid}.ipfs.w3s.link/${newString}`);
+      setIsLoadingImg(false);
+
+    }
+  };
+
+
+
   const handleFormFieldChange = (fieldName, e) => {
     setForm({ ...form, [fieldName]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //console.log( form)
 
+    //console.log( form)
+    console.log(final);
+    form.image = final;
+    console.log(form);
+    console.log(link);
     setIsLoading(true);
     await publishPost({
       ...form,
@@ -140,6 +184,7 @@ const CreatePost = () => {
             value={form.time}
             handleChange={(e) => handleFormFieldChange("time", e)}
           />
+          {console.log(form).time};
         </div>
 
         {/* <FormField
@@ -150,17 +195,19 @@ const CreatePost = () => {
           handleChange={(e) => handleFormFieldChange("image", e)}
         /> */}
         <div className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-black text-[14px] placeholder:text-[#4b5264] rounded-[10px] sm:min-w-[300px]">
-          <input type="file" onChange={() => setFile(getFiles)} />
-          <button onClick={storeFiles(file)}>Submit</button>
-          {/* <h2>{`https://${link}.ipfs.w3s.link/${name}`}</h2> */}
-          {flag ? <img src={`https://${link}.ipfs.w3s.link/${name}`} alt="images" object-fit="cover" width="200" height="200" /> : <h2>Nothing</h2>
+          <input type="file" onChange={handleImage} />
+          {/* <button onClick={storeFiles(file)} >Submit</button> */}
+          {/* {()=>{setFinal(`https://${link}.ipfs.w3s.link/${name}`)
+      console.log(final)}  } */}
+          {isLoadingImg && <p>loading ..</p>}
+          {!isLoadingImg && final && <img src={final} className="mt-10 flex  place-content-center " alt="images" object-fit="cover" width="200" height="200" />
           }
         </div>
 
         <div className="flex justify-center items-center mt-[40px]">
           <CustomButton
             btnType="submit"
-            title="Submit "
+            title="Submit"
             styles="bg-sky-600"
           />
         </div>
