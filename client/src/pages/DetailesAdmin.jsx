@@ -10,7 +10,7 @@ import { BiUpvote } from "react-icons/bi";
 function DetailesAdmin() {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const { donate, address,updatePolice,reject } = useStateContext();
+    const { donate, address, updatePolice, reject } = useStateContext();
 
     const [isLoading, setIsLoading] = useState(false);
     const [amount, setAmount] = useState('');
@@ -32,11 +32,11 @@ function DetailesAdmin() {
         setIsLoading(true);
 
         //await upVoteCall(state.pId,);
-       await updatePolice(state.pId);
+        await updatePolice(state.pId);
         //navigate('/');
         setIsLoading(false);
-       // updatePolice(state.pId);
-        navigate('/')
+        // updatePolice(state.pId);
+        navigate('/');
 
     };
     const handleReject = async () => {
@@ -44,11 +44,11 @@ function DetailesAdmin() {
         setIsLoading(true);
 
         //await upVoteCall(state.pId,);
-       await reject(state.pId);
+        await reject(state.pId);
         //navigate('/');
         setIsLoading(false);
-        updatePolice(state.pId);
-        navigate('/')
+        //updatePolice(state.pId);
+        navigate('/');
 
     };
 
