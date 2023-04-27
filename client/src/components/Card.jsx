@@ -10,7 +10,7 @@ function Card({ owner, title, location, eventTime, description, amountCollected,
     const date = eventTime ? eventTime : "";
 
 
-    const formattedDate = format(date, "d MMM yyyy");
+    const formattedDate = format(date, "d MMM ");
 
     return (
         <>
