@@ -4855,11 +4855,6 @@ es6-symbol@^3.1.1, es6-symbol@^3.1.3:
     d "^1.0.1"
     ext "^1.1.2"
 
-esbuild-windows-64@0.15.17:
-  version "0.15.17"
-  resolved "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.15.17.tgz"
-  integrity sha512-jPnXvB4zMMToNPpCBdt+OEQiYFVs9wlQ5G8vMoJkrYJBp1aEt070MRpBFa6pfBFrgXquqgUiNAohMcTdy+JVFg==
-
 esbuild@^0.15.9:
   version "0.15.17"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.15.17.tgz"

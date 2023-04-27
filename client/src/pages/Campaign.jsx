@@ -55,10 +55,10 @@ function Campaign() {
         </div>
         
         <div className = "flex flex-wrap align-center items-center mt-4 justify-center">
-            <CardCampaign title={"drugs are not good"} hash1 = {"robin"} hash2= {"port"} src = { img3 }/>
-            <CardCampaign title={" never do drugs"} hash1 = {"is"} hash2= {"of"} src = { drg }/>
-            <CardCampaign title={"why you should not do drugs"} hash1 = {"dead"} hash2 = {"kochi"} src = { drg3 }/>
-            <CardCampaign title={"why drugs do to your body"} hash1 = {"dead"} hash2 = {"kochi"} src = {drg4}/>
+            <CardCampaign title={"drugs are not good"} hash1 = {"drug"} hash2= {"addict"} src = { img3 } info = {'Addiction is a disease that affects your brain and behavior. When you’re addicted to drugs, you can’t resist the urge to use them,...'}/>
+            <CardCampaign title={" never do drugs"} hash1 = {"addiction"} hash2= {"notodrugs"} src = { drg } info={'Drug addiction isn’t about just heroin, cocaine, or other illegal drugs. You can get addicted to alcohol, nicotine, sleep...'}/>
+            <CardCampaign title={"why you should not do drugs"} hash1 = {"health"} hash2 = {"body"} src = { drg3 } info= { ' You can also get addicted to prescription or illegally obtained narcotic pain medications, or opioids...'}/>
+            <CardCampaign title={"why drugs do to your body"} hash1 = {"harmful"} hash2 = {"India"} src = {drg4} info={'Different types of drugs can affect your body in different ways, and the effects associated with drugs can vary from person to person...'}/>
         </div>
       
       </>

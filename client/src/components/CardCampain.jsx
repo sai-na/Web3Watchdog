@@ -1,5 +1,5 @@
 
-function CardCampaign({title, hash1, hash2, src }) 
+function CardCampaign({title, hash1, hash2, src, info }) 
 {
     return(
         <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 hover:shadow-2xl hover:translate-y-2">
@@ -7,7 +7,7 @@ function CardCampaign({title, hash1, hash2, src })
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">{title}</div>
     <p className="text-gray-700 text-base">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+      {info}
     </p>
   </div>
   <div className="px-6 pt-4 pb-2">
