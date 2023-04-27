@@ -119,6 +119,7 @@ let f = e.target.files[0].name;
     console.log(form);
     console.log(link);
     setIsLoading(true);
+    console.log(form)
     await publishPost({
       ...form,
 
