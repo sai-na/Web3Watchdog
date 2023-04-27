@@ -185,7 +185,7 @@ const CampaignDetails = () => {
 
 
               <div className="flex-1">
-                <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Fund</h4>
+                {/* <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Fund</h4> */}
 
                 <div className="mt-[20px] flex flex-col p-4 bg-sky-100 rounded-[10px]">
                   <p className="font-epilogue font-extrabold text-[20px] leading-[30px] text-center text-blue-900">
@@ -197,7 +197,7 @@ const CampaignDetails = () => {
                       type="number"
                       placeholder="ETH 0.1"
                       step="0.01"
-                      className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
+                      className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-sky-900 text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
                       value={amount}
                       onChange={(e) => setAmount(e.target.value)}
                     />
